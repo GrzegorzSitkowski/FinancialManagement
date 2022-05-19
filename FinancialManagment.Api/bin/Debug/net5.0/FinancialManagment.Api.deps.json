@@ -33,6 +33,7 @@
     ".NETCoreApp,Version=v5.0": {
       "FinancialManagment.Api/1.0.0": {
         "dependencies": {
+          "Microsoft.AspNetCore.Identity.UI": "6.0.5",
           "Swashbuckle.AspNetCore": "5.6.3",
           "Microsoft.AspNetCore.Antiforgery": "5.0.0.0",
           "Microsoft.AspNetCore.Authentication.Abstractions": "5.0.0.0",
@@ -325,6 +326,7 @@
           "FinancialManagment.Api.dll": {}
         }
       },
+      "Microsoft.AspNetCore.Identity.UI/6.0.5": {},
       "Microsoft.Extensions.ApiDescription.Server/3.0.0": {},
       "Microsoft.OpenApi/1.2.3": {
         "runtime": {
@@ -2089,6 +2091,13 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "Microsoft.AspNetCore.Identity.UI/6.0.5": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-z3A4e+zrH2t7C7HWVyNyDhD0bKO1447I3HB5tEXJOtzxHT20j++/N/3qfSoRJUt9GShGZcObfxKs552243JSvw==",
+      "path": "microsoft.aspnetcore.identity.ui/6.0.5",
+      "hashPath": "microsoft.aspnetcore.identity.ui.6.0.5.nupkg.sha512"
     },
     "Microsoft.Extensions.ApiDescription.Server/3.0.0": {
       "type": "package",
