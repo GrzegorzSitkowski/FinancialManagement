@@ -160,6 +160,16 @@
         "runtime": {
           "lib/net5.0/System.Diagnostics.DiagnosticSource.dll": {}
         }
+      },
+      "FinancialManagment.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "compile": {
+          "bin/placeholder/FinancialManagment.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/FinancialManagment.Domain.dll": {}
+        }
       }
     }
   },
@@ -519,10 +529,16 @@
         "useSharedDesignerContext.txt",
         "version.txt"
       ]
+    },
+    "FinancialManagment.Domain/1.0.0": {
+      "type": "project",
+      "path": "../FinancialManagment.Domain/FinancialManagment.Domain.csproj",
+      "msbuildProject": "../FinancialManagment.Domain/FinancialManagment.Domain.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net5.0": [
+      "FinancialManagment.Domain >= 1.0.0",
       "Microsoft.EntityFrameworkCore >= 5.0.10"
     ]
   },
@@ -557,7 +573,11 @@
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\sitko\\OneDrive\\Pulpit\\Programowanie\\FinancialManagmentAPI\\FinancialManagment.Api\\FinancialManagment.Domain\\FinancialManagment.Domain.csproj": {
+              "projectPath": "C:\\Users\\sitko\\OneDrive\\Pulpit\\Programowanie\\FinancialManagmentAPI\\FinancialManagment.Api\\FinancialManagment.Domain\\FinancialManagment.Domain.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
