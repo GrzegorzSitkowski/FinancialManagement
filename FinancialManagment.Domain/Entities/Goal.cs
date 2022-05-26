@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FinancialManagment.Domain.Entities
 {
-    public class Goals
+    public class Goal
     {
         public int Id { get; set; }
         public string Name { get; set; }
@@ -14,5 +14,6 @@ namespace FinancialManagment.Domain.Entities
         public decimal SavedAmount { get; set; }
         public DateTime DesiredDate { get; set; }
         public string Note { get; set; }
+        public ICollection<GoalCategory> GoalCategories { get; set; }
     }
 }
