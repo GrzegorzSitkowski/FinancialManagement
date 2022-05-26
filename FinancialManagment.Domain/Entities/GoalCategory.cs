@@ -10,6 +10,6 @@ namespace FinancialManagment.Domain.Entities
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public ICollection<Goals> Goal { get; set; }
+        public ICollection<Goal> Goal { get; set; }
     }
 }
