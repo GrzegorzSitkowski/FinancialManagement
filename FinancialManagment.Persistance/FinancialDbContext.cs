@@ -1,4 +1,5 @@
 ﻿using FinancialManagment.Domain.Common;
+using FinancialManagment.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -13,8 +14,17 @@ namespace FinancialManagment.Persistance
     {
         public FinancialDbContext(DbContextOptions<FinancialDbContext> options) : base(options)
         {
-
+            
         }
+
+        public DbSet<Account> Accounts { get; set; }
+        public DbSet<AccountType> AccountTypes { get; set; }
+        public DbSet<Goal> Goals { get; set; }
+        public DbSet<GoalCategory> GoalCategories { get; set; }
+        public DbSet<ShoppingList> ShoppingLists { get; set; }
+        public DbSet<Transfer> Transfers { get; set; }
+        public DbSet<TransferCategory> TransferCategories { get; set; }
+        public DbSet<TransferType> TransferTypes { get; set; }
 
         public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = new CancellationToken())
         {
