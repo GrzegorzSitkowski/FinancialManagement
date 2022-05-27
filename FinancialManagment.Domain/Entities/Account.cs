@@ -10,7 +10,8 @@ namespace FinancialManagment.Domain.Entities
     public class Account : AuditableEntity
     {
         public string Name { get; set; }
-        public ICollection<AccountType> AccountTypes { get; set; }
+        public int TypeId { get; set; }
+        public AccountType AccountType { get; set; }
         public decimal Amount { get; set; }
         public ICollection<Transfer> Transfers { get; set; }
     }

@@ -11,8 +11,10 @@ namespace FinancialManagment.Domain.Entities
     {
         public string Name { get; set; }
         public decimal Amount { get; set; }
-        public ICollection<TransferType> TransferTypes { get; set; }
-        public ICollection<TransferCategory> TransferCategories { get; set; }
+        public int TypeId { get; set; }
+        public TransferType TransferType { get; set; }
+        public int CategoryId { get; set; }
+        public TransferCategory TransferCategory { get; set; }
         public DateTime Date { get; set; }
         public string Description { get; set; }
         public int AccountId { get; set; }
