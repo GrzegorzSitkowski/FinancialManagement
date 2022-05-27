@@ -14,7 +14,7 @@ namespace FinancialManagment.Domain.Entities
         public decimal SavedAmount { get; set; }
         public DateTime DesiredDate { get; set; }
         public string Note { get; set; }
-        public int CategoryId { get; set }
+        public int CategoryId { get; set; }
         public GoalCategory GoalCategory { get; set; }
     }
 }
