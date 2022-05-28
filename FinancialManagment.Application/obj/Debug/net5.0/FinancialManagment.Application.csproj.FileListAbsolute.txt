@@ -1,0 +1,12 @@
+C:\Users\sitko\OneDrive\Pulpit\Programowanie\FinancialManagmentAPI\FinancialManagment.Api\FinancialManagment.Application\bin\Debug\net5.0\FinancialManagment.Application.deps.json
+C:\Users\sitko\OneDrive\Pulpit\Programowanie\FinancialManagmentAPI\FinancialManagment.Api\FinancialManagment.Application\bin\Debug\net5.0\FinancialManagment.Application.dll
+C:\Users\sitko\OneDrive\Pulpit\Programowanie\FinancialManagmentAPI\FinancialManagment.Api\FinancialManagment.Application\bin\Debug\net5.0\ref\FinancialManagment.Application.dll
+C:\Users\sitko\OneDrive\Pulpit\Programowanie\FinancialManagmentAPI\FinancialManagment.Api\FinancialManagment.Application\bin\Debug\net5.0\FinancialManagment.Application.pdb
+C:\Users\sitko\OneDrive\Pulpit\Programowanie\FinancialManagmentAPI\FinancialManagment.Api\FinancialManagment.Application\obj\Debug\net5.0\FinancialManagment.Application.csproj.AssemblyReference.cache
+C:\Users\sitko\OneDrive\Pulpit\Programowanie\FinancialManagmentAPI\FinancialManagment.Api\FinancialManagment.Application\obj\Debug\net5.0\FinancialManagment.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\sitko\OneDrive\Pulpit\Programowanie\FinancialManagmentAPI\FinancialManagment.Api\FinancialManagment.Application\obj\Debug\net5.0\FinancialManagment.Application.AssemblyInfoInputs.cache
+C:\Users\sitko\OneDrive\Pulpit\Programowanie\FinancialManagmentAPI\FinancialManagment.Api\FinancialManagment.Application\obj\Debug\net5.0\FinancialManagment.Application.AssemblyInfo.cs
+C:\Users\sitko\OneDrive\Pulpit\Programowanie\FinancialManagmentAPI\FinancialManagment.Api\FinancialManagment.Application\obj\Debug\net5.0\FinancialManagment.Application.csproj.CoreCompileInputs.cache
+C:\Users\sitko\OneDrive\Pulpit\Programowanie\FinancialManagmentAPI\FinancialManagment.Api\FinancialManagment.Application\obj\Debug\net5.0\FinancialManagment.Application.dll
+C:\Users\sitko\OneDrive\Pulpit\Programowanie\FinancialManagmentAPI\FinancialManagment.Api\FinancialManagment.Application\obj\Debug\net5.0\ref\FinancialManagment.Application.dll
+C:\Users\sitko\OneDrive\Pulpit\Programowanie\FinancialManagmentAPI\FinancialManagment.Api\FinancialManagment.Application\obj\Debug\net5.0\FinancialManagment.Application.pdb

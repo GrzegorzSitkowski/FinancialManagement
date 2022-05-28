@@ -26,6 +26,11 @@ namespace FinancialManagment.Persistance
         public DbSet<TransferCategory> TransferCategories { get; set; }
         public DbSet<TransferType> TransferTypes { get; set; }
 
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+
+        }
+
         public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = new CancellationToken())
         {
             foreach(var entry in ChangeTracker.Entries<AuditableEntity>())

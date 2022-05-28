@@ -19,9 +19,10 @@ namespace FinancialManagment.Persistance
 
         public TContext CreateDbContext(string[] args)
         {
-            var basePath = Directory.GetCurrentDirectory() + string.Format("{0}..{0}FinancialManagment", Path.DirectorySeparatorChar);
+            var basePath = Directory.GetCurrentDirectory();// + string.Format("{0}..{0}FinancialManagement", Path.DirectorySeparatorChar);
             return Create(basePath, Environment.GetEnvironmentVariable(AspNetCoreEnvironment));
         }
+
         protected abstract TContext CreateNewInstance(DbContextOptions<TContext> options);
 
         private TContext Create(string basePath, string environmentName)
@@ -29,7 +30,8 @@ namespace FinancialManagment.Persistance
             var configuration = new ConfigurationBuilder()
                 .SetBasePath(basePath)
                 .AddJsonFile("appsettings.json")
-                .AddJsonFile($"appsettings.{environmentName}.json", true)
+                .AddJsonFile($"appsettings.Local.json", optional: true)
+                .AddJsonFile($"appsettings.{environmentName}.json", optional: true)
                 .AddEnvironmentVariables()
                 .Build();
 
@@ -41,9 +43,9 @@ namespace FinancialManagment.Persistance
         private TContext Create(string connectionString)
         {
             if (string.IsNullOrEmpty(connectionString))
-                throw new ArgumentException($"{nameof(connectionString)} is null or empty.", nameof(connectionString));            
+                throw new ArgumentException($"Connection string '{ConnectionStringName}' is null or empty.", nameof(connectionString));
 
-            Console.WriteLine("DesignTimeDbContextFactory.Create(string): Connection string: {0}",connectionString);
+            Console.WriteLine($"DesignTimeDbContextFactoryBase.Create(string): Connection string: '{connectionString}'.");
 
             var optionsBuilder = new DbContextOptionsBuilder<TContext>();
 

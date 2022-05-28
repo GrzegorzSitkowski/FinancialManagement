@@ -1702,6 +1702,16 @@
           "lib/netstandard1.3/System.Xml.XmlSerializer.dll": {}
         }
       },
+      "FinancialManagment.Application/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "compile": {
+          "bin/placeholder/FinancialManagment.Application.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/FinancialManagment.Application.dll": {}
+        }
+      },
       "FinancialManagment.Domain/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
@@ -1716,6 +1726,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
         "dependencies": {
+          "FinancialManagment.Application": "1.0.0",
           "FinancialManagment.Domain": "1.0.0",
           "Microsoft.EntityFrameworkCore": "5.0.10",
           "Microsoft.EntityFrameworkCore.SqlServer": "5.0.10",
@@ -6367,6 +6378,11 @@
         "system.xml.xmlserializer.4.3.0.nupkg.sha512",
         "system.xml.xmlserializer.nuspec"
       ]
+    },
+    "FinancialManagment.Application/1.0.0": {
+      "type": "project",
+      "path": "../FinancialManagment.Application/FinancialManagment.Application.csproj",
+      "msbuildProject": "../FinancialManagment.Application/FinancialManagment.Application.csproj"
     },
     "FinancialManagment.Domain/1.0.0": {
       "type": "project",

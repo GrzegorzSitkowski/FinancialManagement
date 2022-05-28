@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -40,6 +41,9 @@ namespace FinancialManagment.Api
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "FinancialManagment.Api", Version = "v1" });
             });
+
+            services.AddDbContext<FinancialDbContext>(options =>
+            options.UseSqlServer(Configuration.GetConnectionString("FinancialDatabase")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
