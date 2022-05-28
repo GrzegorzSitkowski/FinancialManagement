@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Design;
 using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Options;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -13,79 +14,42 @@ namespace FinancialManagment.Persistance
     public abstract class DesignTimeDbContextFactoryBase<TContext> :
         IDesignTimeDbContextFactory<TContext> where TContext : DbContext
     {
-        protected string ConnectionStringName { get; }
-        protected string MigrationsAssemblyName { get; }
-
-        public DesignTimeDbContextFactoryBase(string connectionStringName, string migrationsAssemblyName)
-        {
-            ConnectionStringName = connectionStringName;
-            MigrationsAssemblyName = migrationsAssemblyName;
-        }
+        private const string ConnectionStringName = "FinancialDatabase";
+        private const string AspNetCoreEnvironment = "ASPNETCORE_ENVIRONMENT";
 
         public TContext CreateDbContext(string[] args)
         {
-            return Create(
-                Directory.GetCurrentDirectory(),
-                Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT"),
-                ConnectionStringName, MigrationsAssemblyName);
+            var basePath = Directory.GetCurrentDirectory() + string.Format("{0}..{0}FinancialManagment", Path.DirectorySeparatorChar);
+            return Create(basePath, Environment.GetEnvironmentVariable(AspNetCoreEnvironment));
         }
-        protected abstract TContext CreateNewInstance(
-            DbContextOptions<TContext> options);
+        protected abstract TContext CreateNewInstance(DbContextOptions<TContext> options);
 
-        public TContext CreateWithConnectionStringName(string connectionStringName, string migrationsAssemblyName)
+        private TContext Create(string basePath, string environmentName)
         {
-            var environmentName =
-                Environment.GetEnvironmentVariable(
-                    "ASPNETCORE_ENVIRONMENT");
-
-            var basePath = AppContext.BaseDirectory;
-
-            return Create(basePath, environmentName, connectionStringName, migrationsAssemblyName);
-        }
-
-        private TContext Create(string basePath, string environmentName, string connectionStringName, string migrationsAssemblyName)
-        {
-            var builder = new ConfigurationBuilder()
+            var configuration = new ConfigurationBuilder()
                 .SetBasePath(basePath)
                 .AddJsonFile("appsettings.json")
                 .AddJsonFile($"appsettings.{environmentName}.json", true)
-                .AddEnvironmentVariables();
+                .AddEnvironmentVariables()
+                .Build();
 
-            var config = builder.Build();
+            var connectionString = configuration.GetConnectionString(ConnectionStringName);
 
-            var connstr = config.GetConnectionString(connectionStringName);
-            Console.WriteLine($"Environment: {environmentName ?? "PRODUCTION"}");
-
-            if (string.IsNullOrWhiteSpace(connstr))
-            {
-                throw new InvalidOperationException(
-                    $"Could not find a connection string named '{connectionStringName}'.");
-            }
-            else
-            {
-                return CreateWithConnectionString(connectionStringName, connstr, migrationsAssemblyName);
-            }
+            return Create(connectionString);
         }
 
-        private TContext CreateWithConnectionString(string connectionStringName, string connectionString, string migrationsAssembly)
+        private TContext Create(string connectionString)
         {
             if (string.IsNullOrEmpty(connectionString))
-                throw new ArgumentException(
-             $"{nameof(connectionString)} is null or empty.",
-             nameof(connectionString));
+                throw new ArgumentException($"{nameof(connectionString)} is null or empty.", nameof(connectionString));            
 
-            var optionsBuilder =
-                 new DbContextOptionsBuilder<TContext>();
+            Console.WriteLine("DesignTimeDbContextFactory.Create(string): Connection string: {0}",connectionString);
 
-            Console.WriteLine(
-                "DesignTimeDbContextFactory.Create(string): Connection string: {0}",
-                connectionStringName);
+            var optionsBuilder = new DbContextOptionsBuilder<TContext>();
 
-            optionsBuilder.UseSqlServer(connectionString, db => db.MigrationsAssembly(migrationsAssembly));
+            optionsBuilder.UseSqlServer(connectionString);
 
-            DbContextOptions<TContext> options = optionsBuilder.Options;
-
-            return CreateNewInstance(options);
+            return CreateNewInstance(optionsBuilder.Options);
         }
      }
     }
