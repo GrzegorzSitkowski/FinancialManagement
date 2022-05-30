@@ -15,9 +15,6 @@ namespace FinancialManagment.Persistance.Configuration
         {
             builder.Property(p => p.Name).HasMaxLength(100).IsRequired();
             builder.Property(p => p.Amount).IsRequired();
-            builder.Property(p => p.TransferType).IsRequired();
-            builder.Property(p => p.TransferCategory).IsRequired();
-            builder.Property(p => p.Account).IsRequired();
         }
     }
 }

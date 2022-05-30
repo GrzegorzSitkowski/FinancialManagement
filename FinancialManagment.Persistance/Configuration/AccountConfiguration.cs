@@ -14,7 +14,6 @@ namespace FinancialManagment.Persistance.Configuration
         public void Configure(EntityTypeBuilder<Account> builder)
         {
             builder.Property(p => p.Name).HasMaxLength(50).IsRequired();
-            builder.Property(p => p.AccountType).IsRequired();
             builder.Property(p => p.Amount).IsRequired();
         }
     }

@@ -14,7 +14,6 @@ namespace FinancialManagment.Persistance.Configuration
         public void Configure(EntityTypeBuilder<Goal> builder)
         {
             builder.Property(p => p.Name).HasMaxLength(100).IsRequired();
-            builder.Property(p => p.GoalCategory).IsRequired();
             builder.Property(p => p.SavedAmount).HasDefaultValue(0);
             builder.Property(p => p.TargetAmount).IsRequired();
         }
