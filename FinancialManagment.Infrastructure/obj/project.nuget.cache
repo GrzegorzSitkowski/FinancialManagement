@@ -1,8 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "9JOi4JxjcsF04FXn5E5jMJu6/xlmVSPal/KJpevCsJQPVIHZeAm5VDTSw4wDHOy17ba3+GkQcrHlfKolbcAmdQ==",
+  "dgSpecHash": "wi6pjrd359X1ZMF/jMlsQ2MIRbRRcNr4o8x62gKlxpQn99KUzGj46Nao/Dfhi3Qcr3Jq9JEprK1UIIXQP1v2gA==",
   "success": true,
   "projectFilePath": "C:\\Users\\sitko\\OneDrive\\Pulpit\\Programowanie\\FinancialManagmentAPI\\FinancialManagment.Api\\FinancialManagment.Infrastructure\\FinancialManagment.Infrastructure.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\sitko\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\6.0.0\\microsoft.extensions.configuration.abstractions.6.0.0.nupkg.sha512",
+    "C:\\Users\\sitko\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\6.0.0\\microsoft.extensions.dependencyinjection.abstractions.6.0.0.nupkg.sha512",
+    "C:\\Users\\sitko\\.nuget\\packages\\microsoft.extensions.primitives\\6.0.0\\microsoft.extensions.primitives.6.0.0.nupkg.sha512",
+    "C:\\Users\\sitko\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512"
+  ],
   "logs": []
 }
