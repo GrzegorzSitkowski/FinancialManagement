@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace FinancialManagment.Application.Interfaces
 {
-    interface IFileWrapper
+    public interface IFileStore
     {
-        void WriteAllBytes(string outputFile, byte[] content);
+        string SafeWriteFile(byte[] content, string sourceFileName, string path);
     }
 }

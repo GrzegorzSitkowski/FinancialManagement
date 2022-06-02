@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace FinancialManagment.Application.Interfaces
 {
-    interface IDirectoryWrapper
+    public interface IFileWrapper
     {
-        void CreateDirectory(string path);
+        void WriteAllBytes(string outputFile, byte[] content);
     }
 }

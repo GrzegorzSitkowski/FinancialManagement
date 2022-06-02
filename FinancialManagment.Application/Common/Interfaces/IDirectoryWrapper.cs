@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace FinancialManagment.Application.Interfaces
 {
-    interface IFileStore
+    public interface IDirectoryWrapper
     {
-        string SafeWriteFile(byte[] content, string sourceFileName, string path);
+        void CreateDirectory(string path);
     }
 }

@@ -52,6 +52,16 @@
         "build": {
           "buildTransitive/netcoreapp3.1/_._": {}
         }
+      },
+      "FinancialManagment.Application/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "compile": {
+          "bin/placeholder/FinancialManagment.Application.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/FinancialManagment.Application.dll": {}
+        }
       }
     }
   },
@@ -149,10 +159,16 @@
         "system.runtime.compilerservices.unsafe.nuspec",
         "useSharedDesignerContext.txt"
       ]
+    },
+    "FinancialManagment.Application/1.0.0": {
+      "type": "project",
+      "path": "../FinancialManagment.Application/FinancialManagment.Application.csproj",
+      "msbuildProject": "../FinancialManagment.Application/FinancialManagment.Application.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net5.0": [
+      "FinancialManagment.Application >= 1.0.0",
       "Microsoft.Extensions.Configuration.Abstractions >= 6.0.0",
       "Microsoft.Extensions.DependencyInjection.Abstractions >= 6.0.0"
     ]
@@ -188,7 +204,11 @@
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\sitko\\OneDrive\\Pulpit\\Programowanie\\FinancialManagmentAPI\\FinancialManagment.Api\\FinancialManagment.Application\\FinancialManagment.Application.csproj": {
+              "projectPath": "C:\\Users\\sitko\\OneDrive\\Pulpit\\Programowanie\\FinancialManagmentAPI\\FinancialManagment.Api\\FinancialManagment.Application\\FinancialManagment.Application.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
