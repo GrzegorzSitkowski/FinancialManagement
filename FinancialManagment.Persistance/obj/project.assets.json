@@ -1633,6 +1633,10 @@
       "FinancialManagment.Application/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
+        "dependencies": {
+          "FinancialManagment.Domain": "1.0.0",
+          "Microsoft.EntityFrameworkCore": "5.0.10"
+        },
         "compile": {
           "bin/placeholder/FinancialManagment.Application.dll": {}
         },
