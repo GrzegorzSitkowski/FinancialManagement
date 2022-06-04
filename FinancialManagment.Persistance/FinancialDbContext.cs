@@ -1,4 +1,5 @@
-﻿using FinancialManagment.Domain.Common;
+﻿using FinancialManagment.Application.Common.Interfaces;
+using FinancialManagment.Domain.Common;
 using FinancialManagment.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -11,7 +12,7 @@ using System.Threading.Tasks;
 
 namespace FinancialManagment.Persistance
 {
-    public class FinancialDbContext : DbContext
+    public class FinancialDbContext : DbContext, IFinancialDbContext
     {
         public FinancialDbContext(DbContextOptions<FinancialDbContext> options) : base(options)
         {
