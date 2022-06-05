@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using FinancialManagment.Application.Common.Interfaces;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using System;
@@ -15,6 +16,7 @@ namespace FinancialManagment.Persistance
         {
             services.AddDbContext<FinancialDbContext>(options => options.UseSqlServer(configuration.GetConnectionString("FinancialDatabase")));
 
+            services.AddScoped<IFinancialDbContext, FinancialDbContext>();
             return services;
         }
     }
