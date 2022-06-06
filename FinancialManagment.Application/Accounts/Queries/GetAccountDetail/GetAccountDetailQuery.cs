@@ -9,6 +9,6 @@ namespace FinancialManagment.Application.Accounts.Queries.GetAccountDetail
 {
     public class GetAccountDetailQuery : IRequest<AccountDetailVm>
     {
-        public int AmountId { get; set; }
+        public int AccountId { get; set; }
     }
 }
