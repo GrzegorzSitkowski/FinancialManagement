@@ -1,9 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "nHlCannQckQqeWS+mfj+fCsw1jeM3giIvtjLmr8hB17Z996aFU1Fe+jMV5RrRuerLYA0SeS9rpoLRzt9VAei8Q==",
+  "dgSpecHash": "N6LviWdPKUhJ+J0SAvw/ubYNqSy0huJQgUkUYCH4xi9owez0H/FC4schFfNg80KTEpuxsZvOy4XlgljAYqdrdw==",
   "success": true,
   "projectFilePath": "C:\\Users\\sitko\\OneDrive\\Pulpit\\Programowanie\\FinancialManagmentAPI\\FinancialManagment.Api\\FinancialManagment.Infrastructure\\FinancialManagment.Infrastructure.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\sitko\\.nuget\\packages\\mediatr\\10.0.1\\mediatr.10.0.1.nupkg.sha512",
+    "C:\\Users\\sitko\\.nuget\\packages\\mediatr.contracts\\1.0.1\\mediatr.contracts.1.0.1.nupkg.sha512",
     "C:\\Users\\sitko\\.nuget\\packages\\microsoft.entityframeworkcore\\5.0.10\\microsoft.entityframeworkcore.5.0.10.nupkg.sha512",
     "C:\\Users\\sitko\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\5.0.10\\microsoft.entityframeworkcore.abstractions.5.0.10.nupkg.sha512",
     "C:\\Users\\sitko\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\5.0.10\\microsoft.entityframeworkcore.analyzers.5.0.10.nupkg.sha512",

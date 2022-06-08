@@ -5,11 +5,19 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="MediatR" Version="10.0.1" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.10" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\FinancialManagment.Domain\FinancialManagment.Domain.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Accounts\Commands\" />
+    <Folder Include="Goals\Commands\" />
+    <Folder Include="ShoppingList\Commands\" />
+    <Folder Include="Transfers\Commands\" />
   </ItemGroup>
 
 </Project>

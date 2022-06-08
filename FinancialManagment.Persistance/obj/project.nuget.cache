@@ -1,10 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "OAjZVYsui5N+HL+vdIAlSD3FA3GMxedb/2aMQbhZ6BZUl2jUzzcxA7ElkfgoCUueuATkNaDEXnYsmbhjPpGZEA==",
+  "dgSpecHash": "o48Ym6yXEARuaTH/A9nuUoSnieAa4JuXcyAqn6RdBBP5nYas030khQpv4T+3hJYLol46oLiA99SqnOe/gult9g==",
   "success": true,
   "projectFilePath": "C:\\Users\\sitko\\OneDrive\\Pulpit\\Programowanie\\FinancialManagmentAPI\\FinancialManagment.Api\\FinancialManagment.Persistance\\FinancialManagment.Persistance.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\sitko\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
+    "C:\\Users\\sitko\\.nuget\\packages\\mediatr\\10.0.1\\mediatr.10.0.1.nupkg.sha512",
+    "C:\\Users\\sitko\\.nuget\\packages\\mediatr.contracts\\1.0.1\\mediatr.contracts.1.0.1.nupkg.sha512",
     "C:\\Users\\sitko\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\sitko\\.nuget\\packages\\microsoft.data.sqlclient\\2.0.1\\microsoft.data.sqlclient.2.0.1.nupkg.sha512",
     "C:\\Users\\sitko\\.nuget\\packages\\microsoft.data.sqlclient.sni.runtime\\2.0.1\\microsoft.data.sqlclient.sni.runtime.2.0.1.nupkg.sha512",
