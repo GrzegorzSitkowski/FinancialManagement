@@ -8,6 +8,6 @@ namespace FinancialManagment.Application.Accounts.Queries.GetAccounts
 {
     public class AccountsVm
     {
-        ICollection<AccountsDto> Accounts { get; set; }
+        public ICollection<AccountsDto> Accounts { get; set; }
     }
 }

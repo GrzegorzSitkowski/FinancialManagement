@@ -8,6 +8,6 @@ namespace FinancialManagment.Application.Accounts.Queries.GetGoals
 {
     public class GoalsVm
     {
-        ICollection<GoalsDto> Goals { get; set; }
+        public ICollection<GoalsDto> Goals { get; set; }
     }
 }

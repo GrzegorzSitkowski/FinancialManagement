@@ -8,6 +8,6 @@ namespace FinancialManagment.Application.Accounts.Queries.GetShoppingList
 {
     public class ShoppingListVm
     {
-        ICollection<ShoppingListDto> ShoppingList { get; set; }
+        public ICollection<ShoppingListDto> ShoppingList { get; set; }
     }
 }
