@@ -13,4 +13,11 @@
     <ProjectReference Include="..\FinancialManagment.Domain\FinancialManagment.Domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Accounts\Commands\" />
+    <Folder Include="Goals\Commands\" />
+    <Folder Include="ShoppingList\Commands\" />
+    <Folder Include="Transfers\Commands\" />
+  </ItemGroup>
+
 </Project>
