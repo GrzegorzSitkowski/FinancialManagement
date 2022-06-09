@@ -13,8 +13,4 @@
     <ProjectReference Include="..\FinancialManagment.Domain\FinancialManagment.Domain.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Transfers\Commands\" />
-  </ItemGroup>
-
 </Project>
