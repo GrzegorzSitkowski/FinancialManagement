@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FinancialManagment.Application.ShoppingList.Commands.DeleteProduct
+namespace FinancialManagment.Application.ShoppingList.Commands.UpdateProduct
 {
-    public class DeleteProductCommand : IRequest
+    public class UpdateProductCommand : IRequest
     {
         public int ProductId { get; set; }
     }
