@@ -7,30 +7,30 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace FinancialManagment.Application.ShoppingList.Commands.CreateShoppingList
+namespace FinancialManagment.Application.ShoppingList.Commands.CreateProduct
 {
-    public class CreateShoppingListHandler : IRequestHandler<CreateShoppingListCommand, int>
+    public class CreateProductHandler : IRequestHandler<CreateProductCommand, int>
     {
         private readonly IFinancialDbContext _context;
 
-        public CreateShoppingListHandler(IFinancialDbContext financialDbContext)
+        public CreateProductHandler(IFinancialDbContext financialDbContext)
         {
             _context = financialDbContext;
         }
 
-        public async Task<int> Handle(CreateShoppingListCommand request, CancellationToken cancellationToken)
+        public async Task<int> Handle(CreateProductCommand request, CancellationToken cancellationToken)
         {
-            ShoppingList shoppingList = new()
+            ShoppingList product = new()
             {
                 Product = request.Product,
                 Price = request.Price,
                 Done = request.Done
             };
 
-            _context.ShoppingLists.Add(shoppingList);
+            _context.ShoppingLists.Add(product);
             await _context.SaveChangesAsync(cancellationToken);
 
-            return shoppingList.Id;
+            return product.Id;
         }
     }
 }

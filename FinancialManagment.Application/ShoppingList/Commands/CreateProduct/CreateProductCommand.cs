@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FinancialManagment.Application.ShoppingList.Commands.CreateShoppingList
+namespace FinancialManagment.Application.ShoppingList.Commands.CreateProduct
 {
-    public class CreateShoppingListCommand : IRequest<int>
+    public class CreateProductCommand : IRequest<int>
     {
         public string Product { get; set; }
         public decimal Price { get; set; }
