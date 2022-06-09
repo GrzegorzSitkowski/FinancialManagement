@@ -14,7 +14,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Goals\Commands\" />
     <Folder Include="ShoppingList\Commands\" />
     <Folder Include="Transfers\Commands\" />
   </ItemGroup>
