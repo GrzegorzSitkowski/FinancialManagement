@@ -1,3 +1,4 @@
+using FinancialManagment.Application;
 using FinancialManagment.Infrastructure;
 using FinancialManagment.Persistance;
 using Microsoft.AspNetCore.Builder;
@@ -29,7 +30,7 @@ namespace FinancialManagment.Api
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            
+            services.AddApplication();
             services.AddInfrastructure(Configuration);
             services.AddPersistance(Configuration);
             services.AddCors(options =>
