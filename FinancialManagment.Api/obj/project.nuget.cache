@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "+whhmP3RHbD97Bt6P35KmwKx9U4pSSsNwoD5YOB1DlUETYs4eMHQxpSm9Ltq1J1srO7bTz01GYZIW2SmX0wC/A==",
+  "dgSpecHash": "YE6txxuOmuO0xWJcBjftyQ74OTswjkko2ov/sbGH+KcF8PfZPC2BxMSx0T8qO0jTprZi64ZQ9exFVdVNU5cxbw==",
   "success": true,
   "projectFilePath": "C:\\Users\\sitko\\OneDrive\\Pulpit\\Programowanie\\FinancialManagmentAPI\\FinancialManagment.Api\\FinancialManagment.Api\\FinancialManagment.Api.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\sitko\\.nuget\\packages\\automapper\\11.0.1\\automapper.11.0.1.nupkg.sha512",
     "C:\\Users\\sitko\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\sitko\\.nuget\\packages\\mediatr\\10.0.1\\mediatr.10.0.1.nupkg.sha512",
     "C:\\Users\\sitko\\.nuget\\packages\\mediatr.contracts\\1.0.1\\mediatr.contracts.1.0.1.nupkg.sha512",
