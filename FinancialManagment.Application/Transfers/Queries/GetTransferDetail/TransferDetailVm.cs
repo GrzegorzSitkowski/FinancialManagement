@@ -1,4 +1,6 @@
-﻿using FinancialManagment.Domain.Entities;
+﻿using AutoMapper;
+using FinancialManagment.Application.Common.Mappings;
+using FinancialManagment.Domain.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace FinancialManagment.Application.Accounts.Queries.GetTransferDetail
 {
-    public class TransferDetailVm
+    public class TransferDetailVm : IMapFrom<Transfer>
     {
         public string Name { get; set; }
         public decimal Amount { get; set; }
@@ -16,5 +18,10 @@ namespace FinancialManagment.Application.Accounts.Queries.GetTransferDetail
         public DateTime Date { get; set; }
         public string Description { get; set; }
         public Account Account { get; set; }
+
+        public void Mapping(Profile profile)
+        {
+            profile.CreateMap<Transfer, TransferDetailVm>();
+        }
     }
 }
