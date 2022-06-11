@@ -1,4 +1,6 @@
-﻿using FinancialManagment.Application.Common.Interfaces;
+﻿using AutoMapper;
+using FinancialManagment.Application.Common.Interfaces;
+using FinancialManagment.Domain.Entities;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -13,24 +15,18 @@ namespace FinancialManagment.Application.Accounts.Queries.GetGoalDetail
     public class GetGoalDetailQueryHandler : IRequestHandler<GetGoalDetailQuery, GoalDetailVm>
     {
         private readonly IFinancialDbContext _context;
+        private readonly IMapper _mapper;
 
-        public GetGoalDetailQueryHandler(IFinancialDbContext financialDbContext)
+        public GetGoalDetailQueryHandler(IFinancialDbContext financialDbContext, IMapper mapper)
         {
             _context = financialDbContext;
+            _mapper = mapper;
         }
         public async Task<GoalDetailVm> Handle(GetGoalDetailQuery request, CancellationToken cancellationToken)
         {
             var goal = await _context.Goals.Where(p => p.Id == request.GoalId).FirstOrDefaultAsync(cancellationToken);
 
-            var goalVm = new GoalDetailVm()
-            {
-                Name = goal.Name,
-                TargetAmount = goal.TargetAmount,
-                SavedAmount = goal.SavedAmount,
-                DesireDate = goal.DesiredDate,
-                Note = goal.Note,
-                GoalCategorires = goal.GoalCategory
-            };
+            var goalVm = _mapper.Map<GoalDetailVm>(goal);
 
             return goalVm;
         }
