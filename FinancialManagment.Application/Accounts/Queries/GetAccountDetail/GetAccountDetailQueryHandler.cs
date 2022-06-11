@@ -1,4 +1,5 @@
-﻿using FinancialManagment.Application.Common.Interfaces;
+﻿using AutoMapper;
+using FinancialManagment.Application.Common.Interfaces;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -13,22 +14,18 @@ namespace FinancialManagment.Application.Accounts.Queries.GetAccountDetail
     public class GetAccountDetailQueryHandler : IRequestHandler<GetAccountDetailQuery, AccountDetailVm>
     {
         private readonly IFinancialDbContext _context;
-        public GetAccountDetailQueryHandler(IFinancialDbContext financialDbContext)
+        private readonly IMapper _mapper;
+        public GetAccountDetailQueryHandler(IFinancialDbContext financialDbContext, IMapper mapper)
         {
             _context = financialDbContext;
+            _mapper = mapper;
         }
 
         public async Task<AccountDetailVm> Handle(GetAccountDetailQuery request, CancellationToken cancellationToken)
         {
             var account = await _context.Accounts.Where(p => p.Id == request.AccountId).FirstOrDefaultAsync(cancellationToken);
 
-            var accountVm = new AccountDetailVm()
-            {
-                Name = account.Name,
-                AccountType = account.AccountType,
-                Amount = account.Amount,
-                Transfers = account.Transfers
-            };
+            var accountVm = _mapper.Map<AccountDetailVm>(account);
 
             return accountVm;
         }
