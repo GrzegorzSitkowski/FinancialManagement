@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "hdmvZZ09q0gfgj8hRjC06+c/TgO0PkjcsKQWZwCJj/AqEbf9fsj5hD3e/lDylJmVtwrI+w6hB2cxNE0M7A072A==",
+  "dgSpecHash": "7j/v+cnobxr9BF5QGCm//ceYhoQ5vQtbnnPgcCYa5JytmmdWHZuyC42w8fxw8AABUCzxfjE4QKGHhbiyt7qDZQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\sitko\\OneDrive\\Pulpit\\Programowanie\\FinancialManagmentAPI\\FinancialManagment.Api\\FinancialManagment.Application\\FinancialManagment.Application.csproj",
   "expectedPackageFiles": [
@@ -8,6 +8,7 @@
     "C:\\Users\\sitko\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\11.0.0\\automapper.extensions.microsoft.dependencyinjection.11.0.0.nupkg.sha512",
     "C:\\Users\\sitko\\.nuget\\packages\\mediatr\\10.0.1\\mediatr.10.0.1.nupkg.sha512",
     "C:\\Users\\sitko\\.nuget\\packages\\mediatr.contracts\\1.0.1\\mediatr.contracts.1.0.1.nupkg.sha512",
+    "C:\\Users\\sitko\\.nuget\\packages\\mediatr.extensions.microsoft.dependencyinjection\\10.0.1\\mediatr.extensions.microsoft.dependencyinjection.10.0.1.nupkg.sha512",
     "C:\\Users\\sitko\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\sitko\\.nuget\\packages\\microsoft.entityframeworkcore\\5.0.10\\microsoft.entityframeworkcore.5.0.10.nupkg.sha512",
     "C:\\Users\\sitko\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\5.0.10\\microsoft.entityframeworkcore.abstractions.5.0.10.nupkg.sha512",
