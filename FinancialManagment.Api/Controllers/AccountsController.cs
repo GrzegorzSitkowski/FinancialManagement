@@ -1,4 +1,5 @@
-﻿using FinancialManagment.Application.Accounts.Queries.GetAccountDetail;
+﻿using FinancialManagment.Application.Accounts.Commands.CreateAccount;
+using FinancialManagment.Application.Accounts.Queries.GetAccountDetail;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -10,6 +11,13 @@ namespace FinancialManagment.Api.Controllers
     [Route("api/accounts")]
     public class AccountsController : BaseController
     {
+        [HttpPost]
+        public async Task<IActionResult> AddAccount(CreateAccountCommand command)
+        {
+            var result = await Mediator.Send(command);
+            return Ok(result);
+        }
+
         [HttpGet("{id}")]
         public async Task<ActionResult<AccountDetailVm>> GetDetails(int id)
         {

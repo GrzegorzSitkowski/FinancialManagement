@@ -70,3 +70,12 @@ C:\Users\sitko\OneDrive\Pulpit\Programowanie\FinancialManagmentAPI\FinancialMana
 C:\Users\sitko\OneDrive\Pulpit\Programowanie\FinancialManagmentAPI\FinancialManagment.Api\FinancialManagment.Api\bin\Debug\net5.0\FinancialManagment.Domain.pdb
 C:\Users\sitko\OneDrive\Pulpit\Programowanie\FinancialManagmentAPI\FinancialManagment.Api\FinancialManagment.Api\bin\Debug\net5.0\FinancialManagment.Application.dll
 C:\Users\sitko\OneDrive\Pulpit\Programowanie\FinancialManagmentAPI\FinancialManagment.Api\FinancialManagment.Api\bin\Debug\net5.0\FinancialManagment.Application.pdb
+C:\Users\sitko\OneDrive\Pulpit\Programowanie\FinancialManagmentAPI\FinancialManagment.Api\FinancialManagment.Api\bin\Debug\net5.0\AutoMapper.dll
+C:\Users\sitko\OneDrive\Pulpit\Programowanie\FinancialManagmentAPI\FinancialManagment.Api\FinancialManagment.Api\bin\Debug\net5.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+C:\Users\sitko\OneDrive\Pulpit\Programowanie\FinancialManagmentAPI\FinancialManagment.Api\FinancialManagment.Api\bin\Debug\net5.0\MediatR.dll
+C:\Users\sitko\OneDrive\Pulpit\Programowanie\FinancialManagmentAPI\FinancialManagment.Api\FinancialManagment.Api\bin\Debug\net5.0\MediatR.Contracts.dll
+C:\Users\sitko\OneDrive\Pulpit\Programowanie\FinancialManagmentAPI\FinancialManagment.Api\FinancialManagment.Api\bin\Debug\net5.0\MediatR.Extensions.Microsoft.DependencyInjection.dll
+C:\Users\sitko\OneDrive\Pulpit\Programowanie\FinancialManagmentAPI\FinancialManagment.Api\FinancialManagment.Api\bin\Debug\net5.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\sitko\OneDrive\Pulpit\Programowanie\FinancialManagmentAPI\FinancialManagment.Api\FinancialManagment.Api\bin\Debug\net5.0\Microsoft.Extensions.Options.dll
+C:\Users\sitko\OneDrive\Pulpit\Programowanie\FinancialManagmentAPI\FinancialManagment.Api\FinancialManagment.Api\bin\Debug\net5.0\FinancialManagment.Infrastructure.dll
+C:\Users\sitko\OneDrive\Pulpit\Programowanie\FinancialManagmentAPI\FinancialManagment.Api\FinancialManagment.Api\bin\Debug\net5.0\FinancialManagment.Infrastructure.pdb

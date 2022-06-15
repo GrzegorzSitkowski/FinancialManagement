@@ -10,3 +10,8 @@ C:\Users\sitko\OneDrive\Pulpit\Programowanie\FinancialManagmentAPI\FinancialMana
 C:\Users\sitko\OneDrive\Pulpit\Programowanie\FinancialManagmentAPI\FinancialManagment.Api\FinancialManagment.Infrastructure\obj\Debug\net5.0\FinancialManagment.Infrastructure.dll
 C:\Users\sitko\OneDrive\Pulpit\Programowanie\FinancialManagmentAPI\FinancialManagment.Api\FinancialManagment.Infrastructure\obj\Debug\net5.0\ref\FinancialManagment.Infrastructure.dll
 C:\Users\sitko\OneDrive\Pulpit\Programowanie\FinancialManagmentAPI\FinancialManagment.Api\FinancialManagment.Infrastructure\obj\Debug\net5.0\FinancialManagment.Infrastructure.pdb
+C:\Users\sitko\OneDrive\Pulpit\Programowanie\FinancialManagmentAPI\FinancialManagment.Api\FinancialManagment.Infrastructure\bin\Debug\net5.0\FinancialManagment.Application.dll
+C:\Users\sitko\OneDrive\Pulpit\Programowanie\FinancialManagmentAPI\FinancialManagment.Api\FinancialManagment.Infrastructure\bin\Debug\net5.0\FinancialManagment.Domain.dll
+C:\Users\sitko\OneDrive\Pulpit\Programowanie\FinancialManagmentAPI\FinancialManagment.Api\FinancialManagment.Infrastructure\bin\Debug\net5.0\FinancialManagment.Application.pdb
+C:\Users\sitko\OneDrive\Pulpit\Programowanie\FinancialManagmentAPI\FinancialManagment.Api\FinancialManagment.Infrastructure\bin\Debug\net5.0\FinancialManagment.Domain.pdb
+C:\Users\sitko\OneDrive\Pulpit\Programowanie\FinancialManagmentAPI\FinancialManagment.Api\FinancialManagment.Infrastructure\obj\Debug\net5.0\FinancialManagment.Infrastructure.csproj.CopyComplete

@@ -19,7 +19,7 @@ namespace FinancialManagment.Application.Common.Mappings
         {
             var types = assembly.GetExportedTypes().Where(p =>
             p.GetInterfaces().Any(i =>
-            i.GetGenericTypeDefinition() == typeof(IMapFrom<>)))
+            i.IsGenericType && i.GetGenericTypeDefinition() == typeof(IMapFrom<>)))
             .ToList();
 
             foreach(var type in types)
