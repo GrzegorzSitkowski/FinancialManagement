@@ -27,6 +27,13 @@ namespace FinancialManagment.Api.Controllers
             return vm;
         }
 
+        [HttpPut]
+        public async Task<IActionResult> UpdateAccount(UpdateAccountCommand command)
+        {
+            var account = await Mediator.Send(command);
+            return Ok(account);
+        }
+
         [HttpDelete("{id}")]
         public async Task<ActionResult> DeleteAccount(int id)
         {

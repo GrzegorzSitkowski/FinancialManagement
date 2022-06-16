@@ -22,10 +22,12 @@ namespace FinancialManagment.Application.Accounts.Commands.UpdateAccount
         public async Task<Unit> Handle(UpdateAccountCommand request, CancellationToken cancellationToken)
         {
             var account = await _context.Accounts.Where(p => p.Id == request.AccountId).FirstOrDefaultAsync(cancellationToken);
+            if (account == null)
+                return Unit.Value;
 
-            _context.Accounts.Attach(account);
-            _context.Accounts.Update(account).Property("Name").IsModified = true;
-            _context.Accounts.Update(account).Property("Amount").IsModified = true;
+            account.Id = request.AccountId;
+            account.Name = request.Name;
+            account.Amount = request.Amount;
             //_context.Accounts.Update(account).Property("AccountType").IsModified = true;
 
             await _context.SaveChangesAsync(cancellationToken);
