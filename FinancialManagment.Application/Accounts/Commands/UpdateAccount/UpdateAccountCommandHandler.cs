@@ -26,7 +26,7 @@ namespace FinancialManagment.Application.Accounts.Commands.UpdateAccount
             _context.Accounts.Attach(account);
             _context.Accounts.Update(account).Property("Name").IsModified = true;
             _context.Accounts.Update(account).Property("Amount").IsModified = true;
-            _context.Accounts.Update(account).Property("AccountType").IsModified = true;
+            //_context.Accounts.Update(account).Property("AccountType").IsModified = true;
 
             await _context.SaveChangesAsync(cancellationToken);
 

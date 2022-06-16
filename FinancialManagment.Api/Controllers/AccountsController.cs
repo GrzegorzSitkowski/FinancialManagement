@@ -1,10 +1,12 @@
 ﻿using FinancialManagment.Application.Accounts.Commands.CreateAccount;
 using FinancialManagment.Application.Accounts.Queries.GetAccountDetail;
+using FinancialManagment.Application.Accounts.Commands.UpdateAccount;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using FinancialManagment.Application.Accounts.Commands.DeleteAccount;
 
 namespace FinancialManagment.Api.Controllers
 {
@@ -24,5 +26,13 @@ namespace FinancialManagment.Api.Controllers
             var vm = await Mediator.Send(new GetAccountDetailQuery() { AccountId = id });
             return vm;
         }
+
+        [HttpDelete("{id}")]
+        public async Task<ActionResult> DeleteAccount(int id)
+        {
+            var account = await Mediator.Send(new DeleteAccountCommand() { AccountId = id });
+            return Ok(account);
+        }
+        
     }
 }
