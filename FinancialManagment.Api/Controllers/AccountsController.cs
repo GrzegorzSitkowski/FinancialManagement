@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using FinancialManagment.Application.Accounts.Commands.DeleteAccount;
+using FinancialManagment.Application.Accounts.Queries.GetAccounts;
 
 namespace FinancialManagment.Api.Controllers
 {
@@ -21,11 +22,18 @@ namespace FinancialManagment.Api.Controllers
         }
 
         [HttpGet("{id}")]
-        public async Task<ActionResult<AccountDetailVm>> GetDetails(int id)
+        public async Task<ActionResult<AccountDetailVm>> GetAccount(int id)
         {
             var vm = await Mediator.Send(new GetAccountDetailQuery() { AccountId = id });
             return vm;
         }
+
+        [HttpGet]
+        public async Task<ActionResult<AccountsVm>> GetAccounts()
+        {
+            return await Mediator.Send(new GetAccountsQuery());
+        }
+
 
         [HttpPut]
         public async Task<IActionResult> UpdateAccount(UpdateAccountCommand command)
