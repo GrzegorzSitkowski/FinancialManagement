@@ -1,4 +1,5 @@
-﻿using FinancialManagment.Application.Transfers.Commands.CreateTransfer;
+﻿using FinancialManagment.Application.Accounts.Queries.GetTransferDetail;
+using FinancialManagment.Application.Transfers.Commands.CreateTransfer;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -16,6 +17,13 @@ namespace FinancialManagment.Api.Controllers
         {
             var result = await Mediator.Send(command);
             return Ok(result);
+        }
+
+        [HttpGet("{id}")]
+        public async Task<ActionResult<TransferDetailVm>> GetTransfer(int id)
+        {
+            var vm = await Mediator.Send(new GetTransferDetailQuery() { TransferId = id });
+            return vm;
         }
     }
 }
