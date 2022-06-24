@@ -21,15 +21,16 @@ namespace FinancialManagment.Application.Transfers.Commands.UpdateTransfer
         public async Task<Unit> Handle(UpdateTransferCommand request, CancellationToken cancellationToken)
         {
             var transfer = await _context.Transfers.Where(p => p.Id == request.TransferId).FirstOrDefaultAsync(cancellationToken);
+            if (transfer == null)
+                return Unit.Value;
 
-            _context.Transfers.Attach(transfer);
-            _context.Transfers.Update(transfer).Property("Name").IsModified = true;
-            _context.Transfers.Update(transfer).Property("Amount").IsModified = true;
-            _context.Transfers.Update(transfer).Property("TransferType").IsModified = true;
-            _context.Transfers.Update(transfer).Property("TransferCategory").IsModified = true;
-            _context.Transfers.Update(transfer).Property("Date").IsModified = true;
-            _context.Transfers.Update(transfer).Property("Desription").IsModified = true;
-            _context.Transfers.Update(transfer).Property("Account").IsModified = true;
+
+            transfer.Id = request.TransferId;
+            transfer.Name = request.Name;
+            transfer.TypeId = request.TypeId;
+            transfer.CategoryId = request.CategoryId;
+            transfer.Date = request.Date;
+            transfer.Description = request.Description;
 
             await _context.SaveChangesAsync(cancellationToken);
 
