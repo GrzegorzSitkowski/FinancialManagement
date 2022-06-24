@@ -24,10 +24,13 @@ namespace FinancialManagment.Application.Transfers.Commands.CreateTransfer
             {
                 Name = request.Name,
                 Amount = request.Amount,
+                TypeId = request.TypeId,
                 TransferType = request.TransferType,
+                CategoryId = request.CategoryId,
                 TransferCategory = request.TransferCategory,
                 Date = request.Date,
                 Description = request.Description,
+                AccountId = request.AccountId,
                 Account = request.Account
             };
 
