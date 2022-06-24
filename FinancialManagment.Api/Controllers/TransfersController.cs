@@ -1,5 +1,6 @@
 ﻿using FinancialManagment.Application.Accounts.Queries.GetTransferDetail;
 using FinancialManagment.Application.Transfers.Commands.CreateTransfer;
+using FinancialManagment.Application.Transfers.Commands.DeleteTransfer;
 using FinancialManagment.Application.Transfers.Commands.UpdateTransfer;
 using FinancialManagment.Application.Transfers.Queries.GetTransfers;
 using MediatR;
@@ -38,6 +39,13 @@ namespace FinancialManagment.Api.Controllers
         public async Task<IActionResult> UpdateTransfer(UpdateTransferCommand command)
         {
             var transfer = await Mediator.Send(command);
+            return Ok(transfer);
+        }
+
+        [HttpDelete("{id}")]
+        public async Task<ActionResult> DeleteTransfer (int id)
+        {
+            var transfer = await Mediator.Send(new DeleteTransferCommand() { TransferId = id });
             return Ok(transfer);
         }
     }
