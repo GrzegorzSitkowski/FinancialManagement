@@ -12,6 +12,7 @@ namespace FinancialManagment.Application.Accounts.Commands.CreateAccount
     {
         public string Name { get; set; }
         public decimal Amount { get; set; }
-        //public AccountType accountType { get; set; }
+        public int TypeId { get; set; }
+        public AccountType accountType { get; set; }
     }
 }

@@ -25,7 +25,8 @@ namespace FinancialManagment.Application.Accounts.Commands.CreateAccount
             {
                 Name = request.Name,
                 Amount = request.Amount,
-                //AccountType = request.accountType
+                TypeId = request.TypeId,
+                AccountType = request.accountType
             };
 
             _context.Accounts.Add(account);
