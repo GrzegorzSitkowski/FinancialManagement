@@ -12,10 +12,10 @@ namespace FinancialManagment.Application.Transfers.Queries.GetTransfers
     public class TransfersDto : IMapFrom<Transfer>
     {
         public decimal Amount { get; set; }
-        public TransferType TransferType { get; set; }
-        public TransferCategory TransferCategory { get; set; }
+        public int TransferId { get; set; }
+        public int CategoryId { get; set; }
         public DateTime Date { get; set; }
-        public Account Account { get; set; }
+        public int AccountId { get; set; }
 
         public void Mapping(Profile profile)
         {
