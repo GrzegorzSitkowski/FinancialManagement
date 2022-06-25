@@ -27,7 +27,8 @@ namespace FinancialManagment.Application.Goals.Commands.CreateGoal
                 SavedAmount = request.SavedAmount,
                 DesiredDate = request.DesiredDate,
                 Note = request.Note,
-                GoalCategory = request.goalCategory
+                CategoryId = request.CategoryId,
+                GoalCategory = request.GoalCategory
             };
 
             _context.Goals.Add(goal);

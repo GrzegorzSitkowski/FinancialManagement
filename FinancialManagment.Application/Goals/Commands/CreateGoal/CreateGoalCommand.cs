@@ -15,6 +15,7 @@ namespace FinancialManagment.Application.Goals.Commands.CreateGoal
         public decimal SavedAmount { get; set; }
         public DateTime DesiredDate { get; set; }
         public string Note { get; set; }
-        public GoalCategory goalCategory { get; set; }
+        public int CategoryId { get; set; }
+        public GoalCategory GoalCategory { get; set; }
     }
 }

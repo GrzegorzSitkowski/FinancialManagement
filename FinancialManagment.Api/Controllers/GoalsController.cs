@@ -10,6 +10,11 @@ namespace FinancialManagment.Api.Controllers
     [Route("api/goals")]
     public class GoalsController : BaseController
     {
-       
+       [HttpPost]
+       public async Task<IActionResult> AddGoal(CreateGoalCommand command)
+        {
+            var result = await Mediator.Send(command);
+            return Ok(result);
+        }
     }
 }
