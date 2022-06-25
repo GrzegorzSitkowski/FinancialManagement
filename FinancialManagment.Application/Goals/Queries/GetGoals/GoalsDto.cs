@@ -14,7 +14,7 @@ namespace FinancialManagment.Application.Accounts.Queries.GetGoals
         public decimal TargetAmount { get; set; }
         public decimal SavedAmount { get; set; }
         public DateTime DesiredDate { get; set; }
-        public GoalCategory GoalCategories { get; set; }
+        public int CategoryId { get; set; }
 
         public void Mapping(Profile profile)
         {

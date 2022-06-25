@@ -1,4 +1,5 @@
 ﻿using FinancialManagment.Application.Accounts.Queries.GetGoalDetail;
+using FinancialManagment.Application.Accounts.Queries.GetGoals;
 using FinancialManagment.Application.Goals.Commands.CreateGoal;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -23,6 +24,12 @@ namespace FinancialManagment.Api.Controllers
         {
             var vm = await Mediator.Send(new GetGoalDetailQuery() { GoalId = id });
             return vm;
+        }
+
+        [HttpGet]
+        public async Task<ActionResult<GoalsVm>> GetGoals()
+        {
+            return await Mediator.Send(new GetGoalsQuery());
         }
     }
 }
