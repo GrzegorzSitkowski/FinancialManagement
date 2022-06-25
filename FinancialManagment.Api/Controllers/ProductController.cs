@@ -1,4 +1,5 @@
 ﻿using FinancialManagment.Application.Products.Commands.CreateProduct;
+using FinancialManagment.Application.Products.Commands.UpdateProduct;
 using FinancialManagment.Application.Products.Queries.GetShoppingList;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -12,7 +13,7 @@ namespace FinancialManagment.Api.Controllers
     public class ProductController : BaseController
     {
         [HttpPost]
-        public async Task<IActionResult> AddProduct (CreateProductCommand command)
+        public async Task<IActionResult> AddProduct(CreateProductCommand command)
         {
             var result = await Mediator.Send(command);
             return Ok(result);
@@ -22,6 +23,13 @@ namespace FinancialManagment.Api.Controllers
         public async Task<ActionResult<ShoppingListVm>> GetShoppingLis()
         {
             return await Mediator.Send(new GetShoppingListQuery());
+        }
+
+        [HttpPut]
+        public async Task<IActionResult> UpdateProduct(UpdateProductCommand command)
+        {
+            var product = await Mediator.Send(command);
+            return Ok(product);
         }
     }
 }
