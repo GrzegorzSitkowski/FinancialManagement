@@ -1,6 +1,7 @@
 ﻿using FinancialManagment.Application.Accounts.Queries.GetGoalDetail;
 using FinancialManagment.Application.Accounts.Queries.GetGoals;
 using FinancialManagment.Application.Goals.Commands.CreateGoal;
+using FinancialManagment.Application.Goals.Commands.UpdateGoal;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -30,6 +31,13 @@ namespace FinancialManagment.Api.Controllers
         public async Task<ActionResult<GoalsVm>> GetGoals()
         {
             return await Mediator.Send(new GetGoalsQuery());
+        }
+
+        [HttpPut]
+        public async Task<IActionResult> UpdateGoal(UpdateGoalCommand command)
+        {
+            var goal =  await Mediator.Send(command);
+            return Ok(goal);
         }
     }
 }
