@@ -1,4 +1,5 @@
 ﻿using FinancialManagment.Application.Products.Commands.CreateProduct;
+using FinancialManagment.Application.Products.Queries.GetShoppingList;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -15,6 +16,12 @@ namespace FinancialManagment.Api.Controllers
         {
             var result = await Mediator.Send(command);
             return Ok(result);
+        }
+
+        [HttpGet]
+        public async Task<ActionResult<ShoppingListVm>> GetShoppingLis()
+        {
+            return await Mediator.Send(new GetShoppingListQuery());
         }
     }
 }
