@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using FinancialManagment.Application.Products.Commands.CreateProduct;
+using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,9 +10,11 @@ namespace FinancialManagment.Api.Controllers
     [Route("api/products")]
     public class ProductController : BaseController
     {
-        public IActionResult Index()
+        [HttpPost]
+        public async Task<IActionResult> AddProduct (CreateProductCommand command)
         {
-            return View();
+            var result = await Mediator.Send(command);
+            return Ok(result);
         }
     }
 }
