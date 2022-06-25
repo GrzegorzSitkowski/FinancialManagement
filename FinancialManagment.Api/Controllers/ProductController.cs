@@ -1,4 +1,5 @@
 ﻿using FinancialManagment.Application.Products.Commands.CreateProduct;
+using FinancialManagment.Application.Products.Commands.DeleteProduct;
 using FinancialManagment.Application.Products.Commands.UpdateProduct;
 using FinancialManagment.Application.Products.Queries.GetShoppingList;
 using Microsoft.AspNetCore.Mvc;
@@ -29,6 +30,13 @@ namespace FinancialManagment.Api.Controllers
         public async Task<IActionResult> UpdateProduct(UpdateProductCommand command)
         {
             var product = await Mediator.Send(command);
+            return Ok(product);
+        }
+
+        [HttpDelete("{id}")]
+        public async Task<ActionResult> DeleteProduct(int id)
+        {
+            var product = await Mediator.Send(new DeleteProductCommand() { ProductId = id});
             return Ok(product);
         }
     }
