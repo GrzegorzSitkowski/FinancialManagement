@@ -22,13 +22,12 @@ namespace FinancialManagment.Application.Goals.Commands.UpdateGoal
         {
             var goal = await _context.Goals.Where(p => p.Id == request.GoalId).FirstOrDefaultAsync(cancellationToken);
 
-            _context.Goals.Attach(goal);
-            _context.Goals.Update(goal).Property("Name").IsModified = true;
-            _context.Goals.Update(goal).Property("TargetAmount").IsModified = true;
-            _context.Goals.Update(goal).Property("SavedAmount").IsModified = true;
-            _context.Goals.Update(goal).Property("DesiredDate").IsModified = true;
-            _context.Goals.Update(goal).Property("Note").IsModified = true;
-            _context.Goals.Update(goal).Property("goalCategory").IsModified = true;
+            goal.Name = request.Name;
+            goal.TargetAmount = request.TargetAmount;
+            goal.SavedAmount = request.SavedAmount;
+            goal.DesiredDate = request.DesireDate;
+            goal.Note = request.Note;
+            goal.CategoryId = request.CategoryId;
 
             await _context.SaveChangesAsync(cancellationToken);
 
