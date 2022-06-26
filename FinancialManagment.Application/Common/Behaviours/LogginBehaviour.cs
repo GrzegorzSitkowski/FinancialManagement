@@ -1,12 +1,26 @@
-﻿using System;
+﻿using MediatR.Pipeline;
+using Microsoft.Extensions.Logging;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace FinancialManagment.Application.Common.Behaviours
 {
-    class LogginBehaviour
+    public class LogginBehaviour<TRequest> : IRequestPreProcessor<TRequest>
     {
+        private readonly ILogger _logger;
+        public LogginBehaviour(ILogger<TRequest> logger)
+        {
+            _logger = logger;
+        }
+        public async Task Process(TRequest request, CancellationToken cancellationToken)
+        {
+            var requestName = typeof(TRequest).Name;
+
+            _logger.LogInformation("FinancialManagment Request: {Name} {@Request}", requestName, request);
+        }
     }
 }
