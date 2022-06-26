@@ -1,5 +1,7 @@
-﻿using FinancialManagment.Application.Common.Interfaces;
+﻿using FinancialManagment.Application.Common.Behaviours;
+using FinancialManagment.Application.Common.Interfaces;
 using MediatR;
+using MediatR.Pipeline;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using System;
@@ -17,6 +19,8 @@ namespace FinancialManagment.Application
         {
             services.AddMediatR(Assembly.GetExecutingAssembly());
             services.AddAutoMapper(Assembly.GetExecutingAssembly());
+
+            services.AddTransient(typeof(IRequestPreProcessor<>), typeof(LoggingBehaviour<>));
             return services;
         }
     }
