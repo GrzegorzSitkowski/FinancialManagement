@@ -10,15 +10,17 @@ using System.Threading.Tasks;
 
 namespace FinancialManagment.Application.Common.Behaviours
 {
-    public class PerfomanceBehaviour<TRequest, TResponse> : IPipelineBehavior<TRequest, TResponse>
+    public class PerformanceBehaviour<TRequest, TResponse> : IPipelineBehavior<TRequest, TResponse>
     {
         private readonly ILogger _logger;
         private readonly Stopwatch _timer;
-        public PerfomanceBehaviour(ILogger<TRequest> logger, Stopwatch timer)
+
+        public PerformanceBehaviour(ILogger<TRequest> logger, Stopwatch timer)
         {
             _timer = new Stopwatch();
             _logger = logger;
         }
+
         public async Task<TResponse> Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate<TResponse> next)
         {
             _timer.Start();
