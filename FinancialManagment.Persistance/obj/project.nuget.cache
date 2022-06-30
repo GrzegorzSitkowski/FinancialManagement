@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "3w1U3XGGfqJ63fRZEGjOa5qurSXWO3AQogi9XguEbTo7GRmGrm8/jJx6YBz7UQxSeJPYPboJWcnAaIXj3zeccA==",
+  "dgSpecHash": "rcKGzY0iAZkuPlL1kSPcHc3c36j+IrI2XHKiTYa3fduHH/69AxnddxPTYqcyVVSLgjWDquwtNaBcbZtVdK36/A==",
   "success": true,
   "projectFilePath": "C:\\Users\\sitko\\OneDrive\\Pulpit\\Programowanie\\FinancialManagmentAPI\\FinancialManagment.Api\\FinancialManagment.Persistance\\FinancialManagment.Persistance.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\sitko\\.nuget\\packages\\automapper\\11.0.1\\automapper.11.0.1.nupkg.sha512",
     "C:\\Users\\sitko\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\11.0.0\\automapper.extensions.microsoft.dependencyinjection.11.0.0.nupkg.sha512",
+    "C:\\Users\\sitko\\.nuget\\packages\\fluentvalidation\\11.1.0\\fluentvalidation.11.1.0.nupkg.sha512",
     "C:\\Users\\sitko\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\sitko\\.nuget\\packages\\mediatr\\10.0.1\\mediatr.10.0.1.nupkg.sha512",
     "C:\\Users\\sitko\\.nuget\\packages\\mediatr.contracts\\1.0.1\\mediatr.contracts.1.0.1.nupkg.sha512",

@@ -1,5 +1,7 @@
-﻿using FinancialManagment.Application.Common.Behaviours;
+﻿using FinancialManagment.Application.Accounts.Commands.CreateAccount;
+using FinancialManagment.Application.Common.Behaviours;
 using FinancialManagment.Application.Common.Interfaces;
+using FluentValidation;
 using MediatR;
 using MediatR.Pipeline;
 using Microsoft.Extensions.Configuration;
@@ -19,6 +21,8 @@ namespace FinancialManagment.Application
         {
             services.AddMediatR(Assembly.GetExecutingAssembly());
             services.AddAutoMapper(Assembly.GetExecutingAssembly());
+
+            services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
 
             services.AddTransient(typeof(IRequestPreProcessor<>), typeof(LoggingBehaviour<>));
             services.AddTransient(typeof(IPipelineBehavior<,>), typeof(PerformanceBehaviour<,>));

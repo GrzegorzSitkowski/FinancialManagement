@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "Ixx4KhkM6XOg2spxSywwXRNKZZ91SKah0b2tHJiLwyp4njVBf8b6P9+0LAxYRZz2KN46TAGDs78wFQAe+JTD8A==",
+  "dgSpecHash": "CMzc5usXsTi6LG2F3bgKew6DupHt+6bFW65X4hor7QUkbNyS+cAc1B3XlgkiY7K/v/33nrpqhUqI90FDxDm6PA==",
   "success": true,
   "projectFilePath": "C:\\Users\\sitko\\OneDrive\\Pulpit\\Programowanie\\FinancialManagmentAPI\\FinancialManagment.Api\\FinancialManagment.Infrastructure\\FinancialManagment.Infrastructure.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\sitko\\.nuget\\packages\\automapper\\11.0.1\\automapper.11.0.1.nupkg.sha512",
     "C:\\Users\\sitko\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\11.0.0\\automapper.extensions.microsoft.dependencyinjection.11.0.0.nupkg.sha512",
+    "C:\\Users\\sitko\\.nuget\\packages\\fluentvalidation\\11.1.0\\fluentvalidation.11.1.0.nupkg.sha512",
     "C:\\Users\\sitko\\.nuget\\packages\\mediatr\\10.0.1\\mediatr.10.0.1.nupkg.sha512",
     "C:\\Users\\sitko\\.nuget\\packages\\mediatr.contracts\\1.0.1\\mediatr.contracts.1.0.1.nupkg.sha512",
     "C:\\Users\\sitko\\.nuget\\packages\\mediatr.extensions.microsoft.dependencyinjection\\10.0.1\\mediatr.extensions.microsoft.dependencyinjection.10.0.1.nupkg.sha512",
