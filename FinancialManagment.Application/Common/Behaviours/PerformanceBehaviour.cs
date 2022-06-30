@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace FinancialManagment.Application.Common.Behaviours
 {
-    public class PerformanceBehaviour<TRequest, TResponse> : IPipelineBehavior<TRequest, TResponse>
+    public class PerformanceBehaviour<TRequest, TResponse> : IPipelineBehavior<TRequest, TResponse> where TRequest : MediatR.IRequest<TResponse>
     {
             private readonly ILogger _logger;
             private readonly Stopwatch _timer;
