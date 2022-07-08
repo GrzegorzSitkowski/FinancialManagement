@@ -11,6 +11,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
+using Serilog;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -62,8 +63,9 @@ namespace FinancialManagment.Api
 
             app.UseHttpsRedirection();
 
-            app.UseRouting();
+            app.UseSerilogRequestLogging();
 
+            app.UseRouting();
             app.UseCors();
 
             app.UseAuthorization();
