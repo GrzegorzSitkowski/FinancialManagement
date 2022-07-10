@@ -24,7 +24,7 @@ namespace FinancialManagment.Application.Accounts.Queries.GetGoals
         }
         public async Task<GoalsVm> Handle(GetGoalsQuery request, CancellationToken cancellationToken)
         {
-            var goals = await _context.Goals.AsNoTracking().ProjectTo<GoalsDto>(_mapper.ConfigurationProvider).ToListAsync();
+            var goals = await _context.Goals.AsNoTracking().Where(p => p.StatusId == 1).ProjectTo<GoalsDto>(_mapper.ConfigurationProvider).ToListAsync();
 
             return new GoalsVm() { Goals = goals };
         }
