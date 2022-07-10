@@ -25,7 +25,7 @@ namespace FinancialManagment.Application.Transfers.Queries.GetTransfers
 
         public async Task<TransfersVm> Handle(GetTransfersQuery request, CancellationToken cancellationToken)
         {
-            var transfers = await _context.Transfers.AsNoTracking().ProjectTo<TransfersDto>(_mapper.ConfigurationProvider).ToListAsync();
+            var transfers = await _context.Transfers.AsNoTracking().Where(p => p.StatusId == 1).ProjectTo<TransfersDto>(_mapper.ConfigurationProvider).ToListAsync();
 
             return new TransfersVm() { Transfers = transfers };
         }
