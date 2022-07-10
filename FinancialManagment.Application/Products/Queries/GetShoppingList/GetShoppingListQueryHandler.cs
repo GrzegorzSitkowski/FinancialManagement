@@ -23,7 +23,7 @@ namespace FinancialManagment.Application.Products.Queries.GetShoppingList
         }
         public async Task<ShoppingListVm> Handle(GetShoppingListQuery request, CancellationToken cancellationToken)
         {
-            var shoppingList = await _context.ShoppingLists.AsNoTracking().ProjectTo<ShoppingListDto>(_mapper.ConfigurationProvider).ToListAsync();
+            var shoppingList = await _context.ShoppingLists.AsNoTracking().Where(p => p.StatusId == 1 && p.Done == false).ProjectTo<ShoppingListDto>(_mapper.ConfigurationProvider).ToListAsync();
 
             return new ShoppingListVm() { Products = shoppingList };
         }
