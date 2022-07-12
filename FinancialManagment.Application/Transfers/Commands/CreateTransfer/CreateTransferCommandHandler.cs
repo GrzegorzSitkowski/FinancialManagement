@@ -34,6 +34,17 @@ namespace FinancialManagment.Application.Transfers.Commands.CreateTransfer
                 Account = request.Account
             };
 
+            var account = _context.Accounts.FirstOrDefault(p => p.Id == transfer.AccountId);
+
+            if(transfer.TypeId == 2 || transfer.TypeId ==3)
+            {
+                account.Amount -= transfer.Amount;
+            }
+            else if(transfer.TypeId == 1)
+            {
+                account.Amount += transfer.Amount;
+            }
+           
             _context.Transfers.Add(transfer);
             await _context.SaveChangesAsync(cancellationToken);
 
