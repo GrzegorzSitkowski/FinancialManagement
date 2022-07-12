@@ -9,16 +9,15 @@ using System.Threading.Tasks;
 
 namespace FinancialManagment.Application.Accounts.Queries.GetAccountDetail
 {
-    public class AccountDetailVm : IMapFrom<Account>
+    public class TransfersAccount : IMapFrom<Transfer>
     {
         public string Name { get; set; }
-        public AccountType AccountType { get; set; }
         public decimal Amount { get; set; }
-        public ICollection<TransfersAccount> Transfers { get; set; }
+        public DateTime Date { get; set; }
 
         public void Mapping(Profile profile)
         {
-            profile.CreateMap<Account, AccountDetailVm>();
+            profile.CreateMap<Transfer, TransfersAccount>();
         }
     }
 }

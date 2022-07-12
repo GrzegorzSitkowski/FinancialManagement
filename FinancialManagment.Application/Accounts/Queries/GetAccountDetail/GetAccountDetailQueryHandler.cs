@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using AutoMapper.QueryableExtensions;
 using FinancialManagment.Application.Common.Interfaces;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
@@ -24,6 +25,7 @@ namespace FinancialManagment.Application.Accounts.Queries.GetAccountDetail
         public async Task<AccountDetailVm> Handle(GetAccountDetailQuery request, CancellationToken cancellationToken)
         {
             var account = await _context.Accounts.Where(p => p.Id == request.AccountId).FirstOrDefaultAsync(cancellationToken);
+            account.Transfers = await _context.Transfers.Where(p => p.AccountId == request.AccountId && p.StatusId == 1).ToListAsync();
 
             var accountVm = _mapper.Map<AccountDetailVm>(account);
 
