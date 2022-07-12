@@ -21,6 +21,16 @@ namespace FinancialManagment.Application.Transfers.Commands.DeleteTransfer
         public async Task<Unit> Handle(DeleteTransferCommand request, CancellationToken cancellationToken)
         {
             var transfer = await _context.Transfers.Where(p => p.Id == request.TransferId).FirstOrDefaultAsync(cancellationToken);
+            var account = _context.Accounts.FirstOrDefault(p => p.Id == transfer.AccountId);
+
+            if (transfer.TypeId == 2 || transfer.TypeId == 3)
+            {
+                account.Amount += transfer.Amount;
+            }
+            else if (transfer.TypeId == 1)
+            {
+                account.Amount -= transfer.Amount;
+            }
 
             _context.Transfers.Remove(transfer);
             await _context.SaveChangesAsync(cancellationToken);
