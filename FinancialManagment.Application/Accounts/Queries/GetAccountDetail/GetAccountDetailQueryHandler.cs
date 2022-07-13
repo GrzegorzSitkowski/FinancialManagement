@@ -26,6 +26,8 @@ namespace FinancialManagment.Application.Accounts.Queries.GetAccountDetail
         {
             var account = await _context.Accounts.Where(p => p.Id == request.AccountId).FirstOrDefaultAsync(cancellationToken);
             account.Transfers = await _context.Transfers.Where(p => p.AccountId == request.AccountId && p.StatusId == 1).ToListAsync();
+            account.AccountType = await _context.AccountTypes.Where(p => p.Id == account.TypeId).FirstOrDefaultAsync(cancellationToken);
+
 
             var accountVm = _mapper.Map<AccountDetailVm>(account);
 
