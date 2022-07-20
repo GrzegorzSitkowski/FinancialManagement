@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "rIwtu5+eXutmdd1uuLta0wpaiOSK8drgAkU5GM8kro+2cb7B75oTnciu0V3dM7hYnUOSgJvVqAUoAjQIRRpJfw==",
+  "dgSpecHash": "4ZtFHj/AjgNU2Bwuj7PqLUqI+UpWICRmkeAR5xEUtV8XqfZIlmMlboFXxcsD05ATaNYKD7lBlN8mJVF9LqE7lA==",
   "success": true,
   "projectFilePath": "C:\\Users\\sitko\\OneDrive\\Pulpit\\Programowanie\\FinancialManagmentAPI\\FinancialManagment.Api\\Application.UnitTests\\Application.UnitTests.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\sitko\\.nuget\\packages\\automapper\\11.0.1\\automapper.11.0.1.nupkg.sha512",
     "C:\\Users\\sitko\\.nuget\\packages\\castle.core\\5.0.0\\castle.core.5.0.0.nupkg.sha512",
     "C:\\Users\\sitko\\.nuget\\packages\\coverlet.collector\\3.0.2\\coverlet.collector.3.0.2.nupkg.sha512",
     "C:\\Users\\sitko\\.nuget\\packages\\diffengine\\6.4.9\\diffengine.6.4.9.nupkg.sha512",
