@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Application.UnitTests.Mapping
 {
-    class MappingTest
+    public class MappingTest
     {
     }
 }
