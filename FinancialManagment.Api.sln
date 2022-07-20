@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.32126.315
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FinancialManagment.Api", "FinancialManagment.Api\FinancialManagment.Api.csproj", "{4015CDF7-95B9-453B-B799-A8000ED2F104}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FinancialManagment.Api", "FinancialManagment.Api\FinancialManagment.Api.csproj", "{4015CDF7-95B9-453B-B799-A8000ED2F104}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{D17E97C0-5A35-4A81-9053-D2BD44B459A7}"
 EndProject
@@ -11,15 +11,19 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastru
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{2B5B64C5-3A35-400B-B661-31C6FABCDB49}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FinancialManagment.Infrastructure", "FinancialManagment.Infrastructure\FinancialManagment.Infrastructure.csproj", "{5E2B1DA8-CB27-4DAC-8218-378AE9851A97}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FinancialManagment.Infrastructure", "FinancialManagment.Infrastructure\FinancialManagment.Infrastructure.csproj", "{5E2B1DA8-CB27-4DAC-8218-378AE9851A97}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FinancialManagment.Persistance", "FinancialManagment.Persistance\FinancialManagment.Persistance.csproj", "{EEB397E8-987D-4923-A2D8-3EDA6491E5C7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FinancialManagment.Persistance", "FinancialManagment.Persistance\FinancialManagment.Persistance.csproj", "{EEB397E8-987D-4923-A2D8-3EDA6491E5C7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FinancialManagment.Application", "FinancialManagment.Application\FinancialManagment.Application.csproj", "{7F23A69E-B65F-41F3-B3A1-9FAC653C4248}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FinancialManagment.Application", "FinancialManagment.Application\FinancialManagment.Application.csproj", "{7F23A69E-B65F-41F3-B3A1-9FAC653C4248}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FinancialManagment.Common", "FinancialManagment.Common\FinancialManagment.Common.csproj", "{A06221AD-0EBE-444A-848B-3DB3E5AC3A7F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FinancialManagment.Common", "FinancialManagment.Common\FinancialManagment.Common.csproj", "{A06221AD-0EBE-444A-848B-3DB3E5AC3A7F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FinancialManagment.Domain", "FinancialManagment.Domain\FinancialManagment.Domain.csproj", "{975AD390-B44A-4ABB-8355-D40399A1BF1E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FinancialManagment.Domain", "FinancialManagment.Domain\FinancialManagment.Domain.csproj", "{975AD390-B44A-4ABB-8355-D40399A1BF1E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{5F06D36C-0771-45D9-97B1-B1DC0695FFD6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application.UnitTests", "Application.UnitTests\Application.UnitTests.csproj", "{8F9B1371-4ED1-4ABF-BC61-DC842F5C99D8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +55,10 @@ Global
 		{975AD390-B44A-4ABB-8355-D40399A1BF1E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{975AD390-B44A-4ABB-8355-D40399A1BF1E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{975AD390-B44A-4ABB-8355-D40399A1BF1E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8F9B1371-4ED1-4ABF-BC61-DC842F5C99D8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8F9B1371-4ED1-4ABF-BC61-DC842F5C99D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8F9B1371-4ED1-4ABF-BC61-DC842F5C99D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8F9B1371-4ED1-4ABF-BC61-DC842F5C99D8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -62,6 +70,7 @@ Global
 		{7F23A69E-B65F-41F3-B3A1-9FAC653C4248} = {2B5B64C5-3A35-400B-B661-31C6FABCDB49}
 		{A06221AD-0EBE-444A-848B-3DB3E5AC3A7F} = {2B5B64C5-3A35-400B-B661-31C6FABCDB49}
 		{975AD390-B44A-4ABB-8355-D40399A1BF1E} = {2B5B64C5-3A35-400B-B661-31C6FABCDB49}
+		{8F9B1371-4ED1-4ABF-BC61-DC842F5C99D8} = {5F06D36C-0771-45D9-97B1-B1DC0695FFD6}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F6C049BD-8681-4F36-BE48-73D87686171D}
