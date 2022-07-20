@@ -14,15 +14,9 @@ namespace FinancialManagment.Persistance
 {
     public class FinancialDbContext : DbContext, IFinancialDbContext
     {
-        private readonly ICurrentUserService _userService;
         public FinancialDbContext(DbContextOptions<FinancialDbContext> options) : base(options)
         {
-            
-        }
 
-        public FinancialDbContext(DbContextOptions<FinancialDbContext> options, ICurrentUserService userService) : base(options)
-        {
-            _userService = userService;
         }
 
         public DbSet<Account> Accounts { get; set; }
@@ -42,24 +36,24 @@ namespace FinancialManagment.Persistance
 
         public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = new CancellationToken())
         {
-            foreach(var entry in ChangeTracker.Entries<AuditableEntity>())
+            foreach (var entry in ChangeTracker.Entries<AuditableEntity>())
             {
-                switch(entry.State)
+                switch (entry.State)
                 {
                     case EntityState.Added:
-                        entry.Entity.CreatedBy = _userService.Email;
+                        entry.Entity.CreatedBy = string.Empty;
                         entry.Entity.Created = DateTime.Now;
                         entry.Entity.StatusId = 1;
                         break;
                     case EntityState.Modified:
-                        entry.Entity.ModifiedBy = _userService.Email;
+                        entry.Entity.ModifiedBy = string.Empty;
                         entry.Entity.Modified = DateTime.Now;
                         break;
                     case EntityState.Deleted:
-                        entry.Entity.ModifiedBy = _userService.Email;
+                        entry.Entity.ModifiedBy = string.Empty;
                         entry.Entity.Modified = DateTime.Now;
                         entry.Entity.Inactivated = DateTime.Now;
-                        entry.Entity.InactivatedBy = _userService.Email;
+                        entry.Entity.InactivatedBy = string.Empty;
                         entry.Entity.StatusId = 0;
                         entry.State = EntityState.Modified;
                         break;

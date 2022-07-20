@@ -1,17 +1,13 @@
-using FinancialManagment.Api.Service;
 using FinancialManagment.Application;
-using FinancialManagment.Application.Common.Interfaces;
 using FinancialManagment.Infrastructure;
 using FinancialManagment.Persistance;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
@@ -46,21 +42,6 @@ namespace FinancialManagment.Api
             }));
 
             services.AddControllers();
-            services.AddCors(options =>
-            {
-                options.AddPolicy("AllowAll", policy => policy.AllowAnyOrigin());
-            });
-            services.TryAddSingleton<IHttpContextAccessor, HttpContextAccessor>();
-            services.AddScoped(typeof(ICurrentUserService), typeof(CurrentUserService));
-            services.AddAuthentication("Bearer")
-                .AddJwtBearer("Bearer", options =>
-                {
-                    options.Authority = "https://localhost:5001";
-                    options.TokenValidationParameters = new Microsoft.IdentityModel.Tokens.TokenValidationParameters();
-                    {
-                        //ValidateAudience = false
-                    };
-                });
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "FinancialManagment.Api", Version = "v1" });
@@ -68,15 +49,6 @@ namespace FinancialManagment.Api
 
             services.AddDbContext<FinancialDbContext>(options =>
             options.UseSqlServer(Configuration.GetConnectionString("FinancialDatabase")));
-
-            services.AddAuthorization(options =>
-            {
-                options.AddPolicy("ApiScope", policy =>
-                {
-                    policy.RequireAuthenticatedUser();
-                    policy.RequireClaim("scope", "api1");
-                });
-            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -100,7 +72,7 @@ namespace FinancialManagment.Api
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapControllers().RequireAuthorization("ApiScope");
+                endpoints.MapControllers();
             });
         }
     }
