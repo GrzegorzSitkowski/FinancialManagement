@@ -23,7 +23,7 @@ namespace Application.UnitTests.Common
 
             context.Database.EnsureCreated();
 
-            var account = new Account() 
+            var account = new FinancialManagment.Domain.Entities.Account() 
             { 
                 Id = 9, 
                 StatusId = 1, 
