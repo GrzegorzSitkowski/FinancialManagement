@@ -27,7 +27,7 @@ namespace Application.UnitTests.Account.Commands.Queries
 
         [Fact]
         public async Task CanGetAccounts()
-        {
+        { 
             var handler = new GetAccountsQueryHandler(_context, _mapper);
 
             var result = await handler.Handle(new GetAccountsQuery(),  CancellationToken.None);
