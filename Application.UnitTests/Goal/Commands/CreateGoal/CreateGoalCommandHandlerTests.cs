@@ -10,7 +10,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using Xunit;
 
-namespace Application.UnitTests.Goal.Commands
+namespace Application.UnitTests.Goal.Commands.CreateGoal
 {
     public class CreateGoalCommandHandlerTests : CommandTestBase
     {
@@ -23,7 +23,7 @@ namespace Application.UnitTests.Goal.Commands
         }
 
         [Fact]
-        public async Task Handle_GivenValidRequest_ShouldInsertTransfer()
+        public async Task Handle_GivenValidRequest_ShouldInsertGoal()
         {
             var command = new CreateGoalCommand()
             {
