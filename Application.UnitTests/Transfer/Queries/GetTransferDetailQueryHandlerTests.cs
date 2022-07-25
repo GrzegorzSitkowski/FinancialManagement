@@ -11,7 +11,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using Xunit;
 
-namespace Application.UnitTests.Transfer.Commands.Queries
+namespace Application.UnitTests.Transfer.Queries
 {
     [Collection("QueryCollection")]
     public class GetTransferDetailQueryHandlerTests

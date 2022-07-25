@@ -29,7 +29,7 @@ namespace Application.UnitTests.Transfer.Commands.DeleteTransfer
                 TransferId = 1
             };
 
-            var result = _handler.Handle(command, CancellationToken.None);
+            var result = await _handler.Handle(command, CancellationToken.None);
 
             var transfer = await _context.Transfers.FirstOrDefaultAsync(x => x.Id == command.TransferId && x.StatusId == 1, CancellationToken.None);
 

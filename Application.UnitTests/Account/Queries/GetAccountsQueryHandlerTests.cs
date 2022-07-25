@@ -11,7 +11,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using Xunit;
 
-namespace Application.UnitTests.Account.Commands.Queries
+namespace Application.UnitTests.Account.Queries
 {
     [Collection("QueryCollection")]
     public class GetAccountsQueryHandlerTests
