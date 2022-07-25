@@ -25,8 +25,8 @@ namespace Application.UnitTests.Common
 
             var account = new FinancialManagment.Domain.Entities.Account() 
             { 
-                Id = 9, 
-                StatusId = 1, 
+                Id = 9,
+                StatusId = 1,
                 Amount = 3000, 
                 TypeId = 1,  
                 Name = "Oszczednosciowe" 
@@ -57,6 +57,7 @@ namespace Application.UnitTests.Common
             var transfer = new FinancialManagment.Domain.Entities.Transfer() 
             {
                 Id = 1,
+                StatusId = 1,
                 AccountId = 1,
                 Amount = 50,
                 CategoryId = 2,
