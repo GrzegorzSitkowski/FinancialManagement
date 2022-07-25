@@ -54,7 +54,7 @@ namespace Application.UnitTests.Common
             };
             context.ShoppingLists.Add(product);
 
-            var transfer = new Transfer() 
+            var transfer = new FinancialManagment.Domain.Entities.Transfer() 
             { 
                 AccountId = 1,
                 Amount = 50,
