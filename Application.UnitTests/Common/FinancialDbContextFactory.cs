@@ -55,13 +55,13 @@ namespace Application.UnitTests.Common
             context.ShoppingLists.Add(product);
 
             var transfer = new FinancialManagment.Domain.Entities.Transfer() 
-            { 
+            {
+                Id = 1,
                 AccountId = 1,
                 Amount = 50,
                 CategoryId = 2,
-                Description = "Home",
-                Id = 1, Name = "Lidl",
-                StatusId = 1,
+                Description = "Home",               
+                Name = "Lidl",
                 TypeId = 2 
             };
             context.Transfers.Add(transfer);
