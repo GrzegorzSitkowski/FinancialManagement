@@ -33,7 +33,7 @@ namespace Application.UnitTests.Common
             };
             context.Accounts.Add(account);
 
-            var goal = new Goal()
+            var goal = new FinancialManagment.Domain.Entities.Goal()
             {
                 Id = 1,
                 StatusId = 1,

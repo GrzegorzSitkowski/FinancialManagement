@@ -28,4 +28,8 @@
     <ProjectReference Include="..\FinancialManagment.Persistance\FinancialManagment.Persistance.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Goal\Commands\CreateGoal\" />
+  </ItemGroup>
+
 </Project>
