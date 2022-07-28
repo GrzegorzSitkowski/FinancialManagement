@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
@@ -6,6 +7,7 @@ using Serilog;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Threading.Tasks;
 
 namespace FinancialManagment.Api
@@ -21,7 +23,7 @@ namespace FinancialManagment.Api
             try
             {
                 Log.Information("Application is starting up.");
-                CreateHostBuilder(args).Build().Run();
+                CreateHostBuilder(args).UseSerilog().Build().Run();
             }
             catch (Exception ex)
             {
@@ -33,12 +35,29 @@ namespace FinancialManagment.Api
             }           
         }
 
-        public static IHostBuilder CreateHostBuilder(string[] args) =>
-            Host.CreateDefaultBuilder(args)
+        public static IWebHostBuilder CreateHostBuilder(string[] args) =>
+            WebHost.CreateDefaultBuilder(args)
             .UseSerilog()
-                .ConfigureWebHostDefaults(webBuilder =>
+                .ConfigureAppConfiguration((hostingContext, config) =>
                 {
-                    webBuilder.UseStartup<Startup>();
-                });
+                    var env = hostingContext.HostingEnvironment;
+                    config.AddJsonFile("appsetings.json", optional: true, reloadOnChange: true)
+                    .AddJsonFile($"appsetings.{env.EnvironmentName}.json", optional: true, reloadOnChange: true)
+                    .AddJsonFile($"appsetings.Local.json", optional: true, reloadOnChange: true);
+
+                    if (env.IsDevelopment())
+                    {
+                        var appAssembly = Assembly.Load(new AssemblyName(env.ApplicationName));
+                        config.AddUserSecrets(appAssembly, optional: true);
+                    }
+
+                    config.AddEnvironmentVariables();
+
+                    if (args != null)
+                    {
+                        config.AddCommandLine(args);
+                    }
+                })
+                .UseStartup<Startup>();
     }
 }
