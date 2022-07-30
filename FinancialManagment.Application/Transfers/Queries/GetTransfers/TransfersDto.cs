@@ -12,7 +12,7 @@ namespace FinancialManagment.Application.Transfers.Queries.GetTransfers
     public class TransfersDto : IMapFrom<Transfer>
     {
         public decimal Amount { get; set; }
-        public int TransferId { get; set; }
+        public int Id { get; set; }
         public int CategoryId { get; set; }
         public DateTime Date { get; set; }
         public int AccountId { get; set; }
