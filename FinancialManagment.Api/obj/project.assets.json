@@ -58,8 +58,12 @@
           "lib/netstandard2.0/Humanizer.dll": {}
         }
       },
-      "IdentityModel/5.2.0": {
+      "IdentityModel/5.0.1": {
         "type": "package",
+        "dependencies": {
+          "System.Text.Encodings.Web": "5.0.0",
+          "System.Text.Json": "5.0.0"
+        },
         "compile": {
           "lib/net5.0/IdentityModel.dll": {}
         },
@@ -1733,7 +1737,16 @@
           "ref/netstandard1.3/_._": {}
         }
       },
-      "System.Text.Json/4.6.0": {
+      "System.Text.Encodings.Web/5.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/netcoreapp3.0/System.Text.Encodings.Web.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp3.0/System.Text.Encodings.Web.dll": {}
+        }
+      },
+      "System.Text.Json/5.0.0": {
         "type": "package",
         "compile": {
           "lib/netcoreapp3.0/System.Text.Json.dll": {}
@@ -2060,15 +2073,15 @@
         "logo.png"
       ]
     },
-    "IdentityModel/5.2.0": {
-      "sha512": "nuhkbaDH9l5QzNJp2MtP3qio57MPtiRneUN8Ocr7od0JvSYaIe3gBj/vxllr11S/Qvu1AG4GZXoyv5469ewYDA==",
+    "IdentityModel/5.0.1": {
+      "sha512": "njk/AnO85Nc0JWiL3Zf4IAI+7PnlfJbsg3YLchC2oKdgmeFf5d4Px3lhmQyzfH32lp54btyYItXnire8wDYmiQ==",
       "type": "package",
-      "path": "identitymodel/5.2.0",
+      "path": "identitymodel/5.0.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "icon.jpg",
-        "identitymodel.5.2.0.nupkg.sha512",
+        "identitymodel.5.0.1.nupkg.sha512",
         "identitymodel.nuspec",
         "lib/net461/IdentityModel.dll",
         "lib/net461/IdentityModel.pdb",
@@ -6211,13 +6224,40 @@
         "system.text.encoding.extensions.nuspec"
       ]
     },
-    "System.Text.Json/4.6.0": {
-      "sha512": "4F8Xe+JIkVoDJ8hDAZ7HqLkjctN/6WItJIzQaifBwClC7wmoLSda/Sv2i6i1kycqDb3hWF4JCVbpAweyOKHEUA==",
+    "System.Text.Encodings.Web/5.0.0": {
+      "sha512": "EEslUvHKll1ftizbn20mX3Ix/l4Ygk/bdJ2LY6/X6FlGaP0RIhKMo9nS6JIGnKKT6KBP2PGj6JC3B9/ZF6ErqQ==",
       "type": "package",
-      "path": "system.text.json/4.6.0",
+      "path": "system.text.encodings.web/5.0.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/net461/System.Text.Encodings.Web.dll",
+        "lib/net461/System.Text.Encodings.Web.xml",
+        "lib/netcoreapp3.0/System.Text.Encodings.Web.dll",
+        "lib/netcoreapp3.0/System.Text.Encodings.Web.xml",
+        "lib/netstandard1.0/System.Text.Encodings.Web.dll",
+        "lib/netstandard1.0/System.Text.Encodings.Web.xml",
+        "lib/netstandard2.0/System.Text.Encodings.Web.dll",
+        "lib/netstandard2.0/System.Text.Encodings.Web.xml",
+        "lib/netstandard2.1/System.Text.Encodings.Web.dll",
+        "lib/netstandard2.1/System.Text.Encodings.Web.xml",
+        "system.text.encodings.web.5.0.0.nupkg.sha512",
+        "system.text.encodings.web.nuspec",
+        "useSharedDesignerContext.txt",
+        "version.txt"
+      ]
+    },
+    "System.Text.Json/5.0.0": {
+      "sha512": "+luxMQNZ2WqeffBU7Ml6njIvxc8169NW2oU+ygNudXQGZiarjE7DOtN7bILiQjTZjkmwwRZGTtLzmdrSI/Ustw==",
+      "type": "package",
+      "path": "system.text.json/5.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
         "LICENSE.TXT",
         "THIRD-PARTY-NOTICES.TXT",
         "lib/net461/System.Text.Json.dll",
@@ -6226,7 +6266,7 @@
         "lib/netcoreapp3.0/System.Text.Json.xml",
         "lib/netstandard2.0/System.Text.Json.dll",
         "lib/netstandard2.0/System.Text.Json.xml",
-        "system.text.json.4.6.0.nupkg.sha512",
+        "system.text.json.5.0.0.nupkg.sha512",
         "system.text.json.nuspec",
         "useSharedDesignerContext.txt",
         "version.txt"
@@ -6770,7 +6810,7 @@
     "net5.0": [
       "FinancialManagment.Infrastructure >= 1.0.0",
       "FinancialManagment.Persistance >= 1.0.0",
-      "IdentityModel >= 5.2.0",
+      "IdentityModel >= 5.0.1",
       "Microsoft.AspNetCore.Authentication.JwtBearer >= 5.0.17",
       "Microsoft.AspNetCore.Identity.UI >= 6.0.5",
       "Microsoft.EntityFrameworkCore.Design >= 5.0.8",
@@ -6835,7 +6875,7 @@
         "dependencies": {
           "IdentityModel": {
             "target": "Package",
-            "version": "[5.2.0, )"
+            "version": "[5.0.1, )"
           },
           "Microsoft.AspNetCore.Authentication.JwtBearer": {
             "target": "Package",
