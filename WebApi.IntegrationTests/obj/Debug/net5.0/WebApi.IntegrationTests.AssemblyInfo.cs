@@ -11,6 +11,7 @@
 using System;
 using System.Reflection;
 
+[assembly: Microsoft.AspNetCore.Identity.UI.UIFrameworkAttribute("Bootstrap4")]
 [assembly: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactoryContentRootAttribute("FinancialManagment.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null", "C:\\Users\\sitko\\OneDrive\\Pulpit\\Programowanie\\FinancialManagmentAPI\\FinancialManag" +
     "ment.Api\\FinancialManagment.Api", "FinancialManagment.Api.csproj", "0")]
 [assembly: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactoryContentRootAttribute("FinancialManagment.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=" +
