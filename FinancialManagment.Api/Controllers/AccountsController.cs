@@ -1,10 +1,7 @@
 ﻿using FinancialManagment.Application.Accounts.Commands.CreateAccount;
 using FinancialManagment.Application.Accounts.Queries.GetAccountDetail;
 using FinancialManagment.Application.Accounts.Commands.UpdateAccount;
-using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Collections.Generic;
-using System.Linq;
+using Microsoft.AspNetCore.Mvc;    
 using System.Threading.Tasks;
 using FinancialManagment.Application.Accounts.Commands.DeleteAccount;
 using FinancialManagment.Application.Accounts.Queries.GetAccounts;
@@ -34,8 +31,7 @@ namespace FinancialManagment.Api.Controllers
             return await Mediator.Send(new GetAccountsQuery());
         }
 
-
-        [HttpPut]
+        [HttpPut("{id}")]
         public async Task<IActionResult> UpdateAccount(UpdateAccountCommand command)
         {
             var account = await Mediator.Send(command);

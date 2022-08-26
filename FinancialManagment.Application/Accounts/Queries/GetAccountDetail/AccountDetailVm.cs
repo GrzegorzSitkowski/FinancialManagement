@@ -11,6 +11,7 @@ namespace FinancialManagment.Application.Accounts.Queries.GetAccountDetail
 {
     public class AccountDetailVm : IMapFrom<Account>
     {
+        public int Id { get; set; }
         public string Name { get; set; }
         public AccountType AccountType { get; set; }
         public decimal Amount { get; set; }

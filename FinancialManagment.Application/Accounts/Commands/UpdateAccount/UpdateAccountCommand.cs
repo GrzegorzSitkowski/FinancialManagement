@@ -9,7 +9,7 @@ namespace FinancialManagment.Application.Accounts.Commands.UpdateAccount
 {
     public class UpdateAccountCommand : IRequest
     {
-        public int AccountId { get; set; }
+        public int Id { get; set; }
         public string Name { get; set; }
         public decimal Amount { get; set; }
     }

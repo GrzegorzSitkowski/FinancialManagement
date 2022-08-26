@@ -25,7 +25,6 @@ namespace FinancialManagment.Application.Accounts.Queries.GetAccounts
         public async Task<AccountsVm> Handle(GetAccountsQuery getAccountsQuery, CancellationToken none)
         {
             var accounts = await _context.Accounts.AsNoTracking().Where(p => p.StatusId == 1).ProjectTo<AccountsDto>(_mapper.ConfigurationProvider).ToListAsync();
-
             return new AccountsVm() { Accounts = accounts };
         }
     }

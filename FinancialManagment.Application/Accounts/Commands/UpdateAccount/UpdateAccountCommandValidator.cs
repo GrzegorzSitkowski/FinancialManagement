@@ -13,7 +13,7 @@ namespace FinancialManagment.Application.Accounts.Commands.UpdateAccount
         {
             RuleFor(x => x.Name).NotEmpty().MaximumLength(30);
             RuleFor(x => x.Amount).NotNull();
-            RuleFor(x => x.AccountId).NotNull();            
+            RuleFor(x => x.Id).NotNull();            
         }
     }
 }

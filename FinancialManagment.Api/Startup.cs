@@ -66,7 +66,7 @@ namespace FinancialManagment.Api
             app.UseSerilogRequestLogging();
 
             app.UseRouting();
-            app.UseCors();
+            app.UseCors(policy => policy.AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin());
 
             app.UseAuthorization();
 

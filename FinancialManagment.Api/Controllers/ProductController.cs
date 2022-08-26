@@ -2,7 +2,9 @@
 using FinancialManagment.Application.Products.Commands.DeleteProduct;
 using FinancialManagment.Application.Products.Commands.UpdateProduct;
 using FinancialManagment.Application.Products.Queries.GetShoppingList;
+using FinancialManagment.Persistance;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
