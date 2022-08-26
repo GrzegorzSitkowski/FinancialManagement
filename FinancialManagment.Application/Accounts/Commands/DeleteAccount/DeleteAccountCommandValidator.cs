@@ -11,7 +11,7 @@ namespace FinancialManagment.Application.Accounts.Commands.DeleteAccount
     {
         public DeleteAccountCommandValidator()
         {
-            RuleFor(x => x.AccountId).NotNull();
+            RuleFor(x => x.Id).NotNull();
         }
     }
 }

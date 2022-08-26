@@ -41,7 +41,7 @@ namespace FinancialManagment.Api.Controllers
         [HttpDelete("{id}")]
         public async Task<ActionResult> DeleteAccount(int id)
         {
-            var account = await Mediator.Send(new DeleteAccountCommand() { AccountId = id });
+            var account = await Mediator.Send(new DeleteAccountCommand() { Id = id });
             return Ok(account);
         }
         

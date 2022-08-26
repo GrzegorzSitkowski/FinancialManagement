@@ -21,7 +21,7 @@ namespace FinancialManagment.Application.Accounts.Commands.DeleteAccount
 
         public async Task<Unit> Handle(DeleteAccountCommand request, CancellationToken cancellationToken)
         {
-            var account = await _context.Accounts.Where(p => p.Id == request.AccountId).FirstOrDefaultAsync(cancellationToken);
+            var account = await _context.Accounts.Where(p => p.Id == request.Id).FirstOrDefaultAsync(cancellationToken);
 
             _context.Accounts.Remove(account);
 

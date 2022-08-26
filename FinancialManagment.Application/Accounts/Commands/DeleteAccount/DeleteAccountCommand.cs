@@ -9,6 +9,6 @@ namespace FinancialManagment.Application.Accounts.Commands.DeleteAccount
 {
     public class DeleteAccountCommand : IRequest
     {
-        public int AccountId { get; set; }
+        public int Id { get; set; }
     }
 }
