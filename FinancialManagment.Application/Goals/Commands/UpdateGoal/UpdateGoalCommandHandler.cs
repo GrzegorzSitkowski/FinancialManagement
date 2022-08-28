@@ -22,6 +22,7 @@ namespace FinancialManagment.Application.Goals.Commands.UpdateGoal
         {
             var goal = await _context.Goals.Where(p => p.Id == request.Id).FirstOrDefaultAsync(cancellationToken);
 
+            goal.Id = request.Id;
             goal.Name = request.Name;
             goal.TargetAmount = request.TargetAmount;
             goal.SavedAmount = request.SavedAmount;

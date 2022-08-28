@@ -11,6 +11,7 @@ namespace FinancialManagment.Application.Accounts.Queries.GetGoalDetail
 {
     public class GoalDetailVm : IMapFrom<Goal>
     {
+        public int Id { get; set; }
         public string Name { get; set; }
         public decimal TargetAmount { get; set; }
         public decimal SavedAmount { get; set; }
