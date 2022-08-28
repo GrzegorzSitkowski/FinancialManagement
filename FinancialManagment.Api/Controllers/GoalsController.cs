@@ -34,7 +34,7 @@ namespace FinancialManagment.Api.Controllers
             return await Mediator.Send(new GetGoalsQuery());
         }
 
-        [HttpPut]
+        [HttpPut("{id}")]
         public async Task<IActionResult> UpdateGoal(UpdateGoalCommand command)
         {
             var goal =  await Mediator.Send(command);
