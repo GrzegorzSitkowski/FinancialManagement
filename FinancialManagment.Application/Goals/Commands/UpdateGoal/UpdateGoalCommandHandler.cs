@@ -20,7 +20,7 @@ namespace FinancialManagment.Application.Goals.Commands.UpdateGoal
 
         public async Task<Unit> Handle(UpdateGoalCommand request, CancellationToken cancellationToken)
         {
-            var goal = await _context.Goals.Where(p => p.Id == request.GoalId).FirstOrDefaultAsync(cancellationToken);
+            var goal = await _context.Goals.Where(p => p.Id == request.Id).FirstOrDefaultAsync(cancellationToken);
 
             goal.Name = request.Name;
             goal.TargetAmount = request.TargetAmount;

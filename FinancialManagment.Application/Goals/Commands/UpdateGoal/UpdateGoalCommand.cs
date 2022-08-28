@@ -9,7 +9,7 @@ namespace FinancialManagment.Application.Goals.Commands.UpdateGoal
 {
     public class UpdateGoalCommand : IRequest
     {
-        public int GoalId { get; set; }
+        public int Id { get; set; }
         public string Name { get; set; }
         public decimal TargetAmount { get; set; }
         public decimal SavedAmount { get; set; }
