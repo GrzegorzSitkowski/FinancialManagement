@@ -27,14 +27,14 @@ namespace Application.UnitTests.Account.Commands.UpdateAccount
         {
             var command = new UpdateAccountCommand()
             {
-                AccountId = 9,
+                Id = 9,
                 Amount = 100,
                 Name = "Test"
             };
 
             var result = await _handler.Handle(command, CancellationToken.None);
 
-            var acc = await _context.Accounts.FirstAsync(x => x.Id == command.AccountId, CancellationToken.None);
+            var acc = await _context.Accounts.FirstAsync(x => x.Id == command.Id, CancellationToken.None);
 
             acc.Name.ShouldBe("Test");
             acc.Amount.ShouldBe(100);

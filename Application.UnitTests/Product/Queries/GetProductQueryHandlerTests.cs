@@ -1,4 +1,5 @@
-﻿using AutoMapper;
+﻿using Application.UnitTests.Common;
+using AutoMapper;
 using FinancialManagment.Application.Products.Queries.GetProductDetail;
 using FinancialManagment.Persistance;
 using Shouldly;
@@ -18,10 +19,10 @@ namespace Application.UnitTests.Product.Queries
         private readonly FinancialDbContext _context;
         private readonly IMapper _mapper;
 
-        public GetProductQueryHandlerTests(FinancialDbContext context, IMapper mapper)
+        public GetProductQueryHandlerTests(QueryTestFixtures fixtures)
         {
-            _context = context;
-            _mapper = mapper;
+            _context = fixtures.Context;
+            _mapper = fixtures.Mapper;
         }
 
         [Fact]

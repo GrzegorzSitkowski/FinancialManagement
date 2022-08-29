@@ -11,6 +11,7 @@ namespace FinancialManagment.Application.Products.Queries.GetProductDetail
 {
     public class ProductDetailVm : IMapFrom<ShoppingList>
     {
+        public int Id { get; set; }
         public string Product { get; set; }
         public decimal Price { get; set; }
         public bool Done { get; set; }

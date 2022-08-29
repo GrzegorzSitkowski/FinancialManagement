@@ -27,7 +27,7 @@ namespace Application.UnitTests.Goal.Commands.UpdateGoal
         {
             var command = new UpdateGoalCommand()
             {
-                GoalId = 1,
+                Id = 1,
                 SavedAmount = 10,
                 TargetAmount = 11,
                 CategoryId = 3,
@@ -38,7 +38,7 @@ namespace Application.UnitTests.Goal.Commands.UpdateGoal
 
             var result = await _handler.Handle(command, CancellationToken.None);
 
-            var goal = await _context.Goals.FirstOrDefaultAsync(x => x.Id == command.GoalId);
+            var goal = await _context.Goals.FirstOrDefaultAsync(x => x.Id == command.Id);
 
             goal.SavedAmount.ShouldBe(10);
             goal.TargetAmount.ShouldBe(11);

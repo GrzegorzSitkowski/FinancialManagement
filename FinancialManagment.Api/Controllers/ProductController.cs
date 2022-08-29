@@ -1,6 +1,7 @@
 ﻿using FinancialManagment.Application.Products.Commands.CreateProduct;
 using FinancialManagment.Application.Products.Commands.DeleteProduct;
 using FinancialManagment.Application.Products.Commands.UpdateProduct;
+using FinancialManagment.Application.Products.Queries.GetProductDetail;
 using FinancialManagment.Application.Products.Queries.GetShoppingList;
 using FinancialManagment.Persistance;
 using Microsoft.AspNetCore.Mvc;
@@ -20,6 +21,13 @@ namespace FinancialManagment.Api.Controllers
         {
             var result = await Mediator.Send(command);
             return Ok(result);
+        }
+
+        [HttpGet("{id}")]
+        public async Task<ActionResult<ProductDetailVm>> GetProduct(int id)
+        {
+            var product = await Mediator.Send(new GetProductDetailQuery() { Id = id });
+            return product;
         }
 
         [HttpGet]

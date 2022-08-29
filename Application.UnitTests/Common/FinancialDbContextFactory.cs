@@ -45,11 +45,12 @@ namespace Application.UnitTests.Common
             };
             context.Goals.Add(goal);
 
-            var product = new ShoppingList()
+            var product = new FinancialManagment.Domain.Entities.ShoppingList()
             {
-                Id = 1,
-                Done = true,
-                Price = 20,
+                Id = 6,
+                Product = "Ketchup",
+                Done = false,
+                Price = 5,
                 StatusId = 1
             };
             context.ShoppingLists.Add(product);

@@ -27,12 +27,12 @@ namespace Application.UnitTests.Account.Commands.DeleteAccount
         {
             var command = new DeleteAccountCommand()
             {
-                AccountId = 9
+                Id = 9
             };
 
             var result = await _handler.Handle(command, CancellationToken.None);
 
-            var acc = await _context.Accounts.FirstOrDefaultAsync(x => x.Id == command.AccountId && x.StatusId == 1, CancellationToken.None);
+            var acc = await _context.Accounts.FirstOrDefaultAsync(x => x.Id == command.Id && x.StatusId == 1, CancellationToken.None);
 
             acc.ShouldBeNull();
         }
