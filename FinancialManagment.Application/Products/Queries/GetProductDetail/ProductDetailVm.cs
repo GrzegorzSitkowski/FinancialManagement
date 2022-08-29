@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace FinancialManagment.Application.Products.Queries.GetProductDetail
 {
-    class ProductDetailVm : IMapFrom<ShoppingList>
+    public class ProductDetailVm : IMapFrom<ShoppingList>
     {
         public string Product { get; set; }
         public decimal Price { get; set; }
