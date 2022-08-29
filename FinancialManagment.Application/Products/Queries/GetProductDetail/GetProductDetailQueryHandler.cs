@@ -1,10 +1,12 @@
 ﻿using AutoMapper;
 using FinancialManagment.Application.Common.Interfaces;
 using MediatR;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace FinancialManagment.Application.Products.Queries.GetProductDetail
@@ -18,6 +20,15 @@ namespace FinancialManagment.Application.Products.Queries.GetProductDetail
         {
             _context = context;
             _mapper = mapper;
+        }
+
+        public async Task<ProductDetailVm> Handle(GetProductDetailQuery request, CancellationToken cancellationToken)
+        {
+            var product = await _context.ShoppingLists.Where(p => p.Id == request.Id).FirstOrDefaultAsync(cancellationToken);
+
+            var productVm = _mapper.Map<ProductDetailVm>(product);
+
+            return productVm;
         }
     }
 }
