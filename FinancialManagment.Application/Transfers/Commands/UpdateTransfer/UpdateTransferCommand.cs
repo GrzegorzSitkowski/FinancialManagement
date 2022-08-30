@@ -9,7 +9,7 @@ namespace FinancialManagment.Application.Transfers.Commands.UpdateTransfer
 {
     public class UpdateTransferCommand : IRequest
     {
-        public int TransferId { get; set; }
+        public int Id { get; set; }
         public string Name { get; set; }
         public int TypeId { get; set; }
         public int CategoryId { get; set; }

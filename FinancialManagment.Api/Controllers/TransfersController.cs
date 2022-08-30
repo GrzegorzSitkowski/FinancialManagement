@@ -35,7 +35,7 @@ namespace FinancialManagment.Api.Controllers
             return await Mediator.Send(new GetTransfersQuery());
         }
 
-        [HttpPut]
+        [HttpPut("{id}")]
         public async Task<IActionResult> UpdateTransfer(UpdateTransferCommand command)
         {
             var transfer = await Mediator.Send(command);
@@ -45,7 +45,7 @@ namespace FinancialManagment.Api.Controllers
         [HttpDelete("{id}")]
         public async Task<ActionResult> DeleteTransfer (int id)
         {
-            var transfer = await Mediator.Send(new DeleteTransferCommand() { TransferId = id });
+            var transfer = await Mediator.Send(new DeleteTransferCommand() { Id = id });
             return Ok(transfer);
         }
     }

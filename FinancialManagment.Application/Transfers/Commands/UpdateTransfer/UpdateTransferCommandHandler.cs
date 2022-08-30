@@ -20,12 +20,12 @@ namespace FinancialManagment.Application.Transfers.Commands.UpdateTransfer
 
         public async Task<Unit> Handle(UpdateTransferCommand request, CancellationToken cancellationToken)
         {
-            var transfer = await _context.Transfers.Where(p => p.Id == request.TransferId).FirstOrDefaultAsync(cancellationToken);
+            var transfer = await _context.Transfers.Where(p => p.Id == request.Id).FirstOrDefaultAsync(cancellationToken);
             if (transfer == null)
                 return Unit.Value;
 
 
-            transfer.Id = request.TransferId;
+            transfer.Id = request.Id;
             transfer.Name = request.Name;
             transfer.TypeId = request.TypeId;
             transfer.CategoryId = request.CategoryId;

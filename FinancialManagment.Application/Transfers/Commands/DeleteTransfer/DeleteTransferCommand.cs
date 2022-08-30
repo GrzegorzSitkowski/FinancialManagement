@@ -9,6 +9,6 @@ namespace FinancialManagment.Application.Transfers.Commands.DeleteTransfer
 {
     public class DeleteTransferCommand : IRequest
     {
-        public int TransferId { get; set; }
+        public int Id { get; set; }
     }
 }

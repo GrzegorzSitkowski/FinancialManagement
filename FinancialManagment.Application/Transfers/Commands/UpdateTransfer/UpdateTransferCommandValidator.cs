@@ -11,7 +11,7 @@ namespace FinancialManagment.Application.Transfers.Commands.UpdateTransfer
     {
         public UpdateTransferCommandValidator()
         {
-            RuleFor(x => x.TransferId).NotNull();
+            RuleFor(x => x.Id).NotNull();
             RuleFor(x => x.CategoryId).NotNull();
             RuleFor(x => x.Date).NotNull();
             RuleFor(x => x.Name).NotNull();

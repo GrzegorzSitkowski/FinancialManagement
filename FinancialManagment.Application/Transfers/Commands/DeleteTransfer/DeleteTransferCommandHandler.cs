@@ -20,7 +20,7 @@ namespace FinancialManagment.Application.Transfers.Commands.DeleteTransfer
 
         public async Task<Unit> Handle(DeleteTransferCommand request, CancellationToken cancellationToken)
         {
-            var transfer = await _context.Transfers.Where(p => p.Id == request.TransferId).FirstOrDefaultAsync(cancellationToken);
+            var transfer = await _context.Transfers.Where(p => p.Id == request.Id).FirstOrDefaultAsync(cancellationToken);
             var account = _context.Accounts.FirstOrDefault(p => p.Id == transfer.AccountId);
 
             if (transfer.TypeId == 2 || transfer.TypeId == 3)

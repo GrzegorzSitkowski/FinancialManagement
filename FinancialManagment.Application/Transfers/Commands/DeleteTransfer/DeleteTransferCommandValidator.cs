@@ -11,7 +11,7 @@ namespace FinancialManagment.Application.Transfers.Commands.DeleteTransfer
     {
         public DeleteTransferCommandValidator()
         {
-            RuleFor(x => x.TransferId).NotNull();
+            RuleFor(x => x.Id).NotNull();
         }
     }
 }
