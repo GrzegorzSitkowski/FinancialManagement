@@ -24,7 +24,7 @@ namespace FinancialManagment.Application.Accounts.Queries.GetTransferDetail
 
         public async Task<TransferDetailVm> Handle(GetTransferDetailQuery request, CancellationToken cancellationToken)
         {
-            var transfer = await _context.Transfers.Where(p => p.Id == request.TransferId).FirstOrDefaultAsync(cancellationToken);
+            var transfer = await _context.Transfers.Where(p => p.Id == request.Id).FirstOrDefaultAsync(cancellationToken);
             transfer.TransferType = await _context.TransferTypes.Where(p => p.Id == transfer.TypeId).FirstOrDefaultAsync(cancellationToken);
             transfer.TransferCategory = await _context.TransferCategories.Where(p => p.Id == transfer.CategoryId).FirstOrDefaultAsync(cancellationToken);
 

@@ -11,6 +11,7 @@ namespace FinancialManagment.Application.Accounts.Queries.GetTransferDetail
 {
     public class TransferDetailVm : IMapFrom<Transfer>
     {
+        public int Id { get; set; }
         public string Name { get; set; }
         public decimal Amount { get; set; }
         public int TypeId { get; set; }

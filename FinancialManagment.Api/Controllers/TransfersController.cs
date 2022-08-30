@@ -25,7 +25,7 @@ namespace FinancialManagment.Api.Controllers
         [HttpGet("{id}")]
         public async Task<ActionResult<TransferDetailVm>> GetTransfer(int id)
         {
-            var vm = await Mediator.Send(new GetTransferDetailQuery() { TransferId = id });
+            var vm = await Mediator.Send(new GetTransferDetailQuery() { Id = id });
             return vm;
         }
 

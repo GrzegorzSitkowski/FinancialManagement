@@ -9,6 +9,6 @@ namespace FinancialManagment.Application.Accounts.Queries.GetTransferDetail
 {
     public class GetTransferDetailQuery : IRequest<TransferDetailVm>
     {
-        public int TransferId { get; set; }
+        public int Id { get; set; }
     }
 }
