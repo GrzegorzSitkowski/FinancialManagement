@@ -20,11 +20,11 @@ namespace FinancialManagment.Application.Products.Commands.UpdateProduct
 
         public async Task<Unit> Handle(UpdateProductCommand request, CancellationToken cancellationToken)
         {
-            var product = await _context.ShoppingLists.Where(p => p.Id == request.ProductId).FirstOrDefaultAsync(cancellationToken);
+            var product = await _context.ShoppingLists.Where(p => p.Id == request.Id).FirstOrDefaultAsync(cancellationToken);
             if (product == null)
                 return Unit.Value;
 
-            product.Id = request.ProductId;
+            product.Id = request.Id;
             product.Product = request.Product;
             product.Price = request.Price;
             product.Done = request.Done;

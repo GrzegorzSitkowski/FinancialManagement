@@ -21,7 +21,7 @@ namespace FinancialManagment.Application.Products.Commands.DeleteProduct
 
         public async Task<Unit> Handle(DeleteProductCommand request, CancellationToken cancellationToken)
         {
-            var product = await _context.ShoppingLists.Where(p => p.Id == request.ProductId).FirstOrDefaultAsync(cancellationToken);
+            var product = await _context.ShoppingLists.Where(p => p.Id == request.Id).FirstOrDefaultAsync(cancellationToken);
 
             _context.ShoppingLists.Remove(product);
             await _context.SaveChangesAsync(cancellationToken);

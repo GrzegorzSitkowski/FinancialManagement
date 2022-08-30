@@ -9,7 +9,7 @@ namespace FinancialManagment.Application.Products.Commands.UpdateProduct
 {
     public class UpdateProductCommand : IRequest
     {
-        public int ProductId { get; set; }
+        public int Id { get; set; }
         public string Product { get; set; }
         public decimal Price { get; set; }
         public bool Done { get; set; }

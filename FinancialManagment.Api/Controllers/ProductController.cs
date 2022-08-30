@@ -36,7 +36,7 @@ namespace FinancialManagment.Api.Controllers
             return await Mediator.Send(new GetShoppingListQuery());
         }
 
-        [HttpPut]
+        [HttpPut("{id}")]
         public async Task<IActionResult> UpdateProduct(UpdateProductCommand command)
         {
             var product = await Mediator.Send(command);
@@ -46,7 +46,7 @@ namespace FinancialManagment.Api.Controllers
         [HttpDelete("{id}")]
         public async Task<ActionResult> DeleteProduct(int id)
         {
-            var product = await Mediator.Send(new DeleteProductCommand() { ProductId = id});
+            var product = await Mediator.Send(new DeleteProductCommand() { Id = id});
             return Ok(product);
         }
     }

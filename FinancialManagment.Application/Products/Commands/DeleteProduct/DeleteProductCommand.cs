@@ -9,6 +9,6 @@ namespace FinancialManagment.Application.Products.Commands.DeleteProduct
 {
     public class DeleteProductCommand : IRequest
     {
-        public int ProductId { get; set; }
+        public int Id { get; set; }
     }
 }

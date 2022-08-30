@@ -11,7 +11,7 @@ namespace FinancialManagment.Application.Products.Commands.DeleteProduct
     {
         public DeleteProductCommandValidator()
         {
-            RuleFor(x => x.ProductId).NotNull();
+            RuleFor(x => x.Id).NotNull();
         }
     }
 }

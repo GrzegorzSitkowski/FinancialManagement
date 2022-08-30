@@ -11,7 +11,7 @@ namespace FinancialManagment.Application.Products.Commands.UpdateProduct
     {
         public UpdateProductCommandValidator()
         {
-            RuleFor(x => x.ProductId).NotNull();
+            RuleFor(x => x.Id).NotNull();
             RuleFor(x => x.Product).NotEmpty().MaximumLength(30);
             RuleFor(x => x.Price).NotNull();
         }
