@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace FinancialManagment.Application.Accounts.Queries.GetAccounts
 {
-    public class GetAccountsQuery : IRequest<AccountsVm>
+    public class GetAccountsQuery : IRequest<AccountsDto>
     {
 
     }

@@ -11,9 +11,11 @@ namespace FinancialManagment.Application.Accounts.Queries.GetAccounts
 {
     public class AccountsDto : IMapFrom<Account>
     {
+        public int Id { get; set; }
         public string Name { get; set; }
-        public AccountType accountType { get; set; }
+        //public AccountType accountType { get; set; }
         public decimal Amount { get; set; }
+        public int TypeId { get; set; }
 
         public void Mapping(Profile profile)
         {

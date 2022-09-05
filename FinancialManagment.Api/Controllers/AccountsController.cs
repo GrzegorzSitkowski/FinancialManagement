@@ -5,12 +5,21 @@ using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 using FinancialManagment.Application.Accounts.Commands.DeleteAccount;
 using FinancialManagment.Application.Accounts.Queries.GetAccounts;
+using FinancialManagment.Persistance;
+using Microsoft.EntityFrameworkCore;
+using System.Linq;
 
 namespace FinancialManagment.Api.Controllers
 {
     [Route("api/accounts")]
     public class AccountsController : BaseController
     {
+        private readonly FinancialDbContext _context;
+
+        public AccountsController(FinancialDbContext context)
+        {
+            _context = context;
+        }
         [HttpPost]
         public async Task<IActionResult> AddAccount(CreateAccountCommand command)
         {
@@ -26,9 +35,11 @@ namespace FinancialManagment.Api.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<AccountsVm>> GetAccounts()
+        public async Task<ActionResult<AccountsDto>> GetAccounts()
         {
-            return await Mediator.Send(new GetAccountsQuery());
+            var accounts = await _context.Accounts.AsNoTracking().Where(p => p.StatusId == 1).ToListAsync();
+            return Ok(accounts);
+          //  return await Mediator.Send(new GetAccountsQuery());
         }
 
         [HttpPut("{id}")]
