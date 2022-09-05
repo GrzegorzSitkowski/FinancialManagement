@@ -28,6 +28,7 @@ namespace FinancialManagment.Application.Accounts.Commands.UpdateAccount
             account.Id = request.Id;
             account.Name = request.Name;
             account.Amount = request.Amount;
+            account.TypeId = request.TypeId;
             //_context.Accounts.Update(account).Property("AccountType").IsModified = true;
 
             await _context.SaveChangesAsync(cancellationToken);

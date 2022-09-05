@@ -12,5 +12,6 @@ namespace FinancialManagment.Application.Accounts.Commands.UpdateAccount
         public int Id { get; set; }
         public string Name { get; set; }
         public decimal Amount { get; set; }
+        public int TypeId { get; set; }
     }
 }
