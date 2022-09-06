@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 
 namespace FinancialManagment.Application.Transfers.Queries.GetTransfers
 {
-    public class GetTransfersQueryHandler : IRequestHandler<GetTransfersQuery, TransfersVm>
+    public class GetTransfersQueryHandler : IRequestHandler<GetTransfersQuery, TransfersDto>
     {
         private readonly IFinancialDbContext _context;
         private readonly IMapper _mapper;
@@ -23,11 +23,11 @@ namespace FinancialManagment.Application.Transfers.Queries.GetTransfers
             _mapper = mapper;
         }
 
-        public async Task<TransfersVm> Handle(GetTransfersQuery request, CancellationToken cancellationToken)
+        public async Task<TransfersDto> Handle(GetTransfersQuery request, CancellationToken cancellationToken)
         {
             var transfers = await _context.Transfers.AsNoTracking().Where(p => p.StatusId == 1).ProjectTo<TransfersDto>(_mapper.ConfigurationProvider).ToListAsync();
 
-            return new TransfersVm() { Transfers = transfers };
+            return new TransfersDto();
         }
     }
 }

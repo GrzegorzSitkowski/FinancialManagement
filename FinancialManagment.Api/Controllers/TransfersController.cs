@@ -3,8 +3,10 @@ using FinancialManagment.Application.Transfers.Commands.CreateTransfer;
 using FinancialManagment.Application.Transfers.Commands.DeleteTransfer;
 using FinancialManagment.Application.Transfers.Commands.UpdateTransfer;
 using FinancialManagment.Application.Transfers.Queries.GetTransfers;
+using FinancialManagment.Persistance;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,6 +17,11 @@ namespace FinancialManagment.Api.Controllers
     [Route("api/transfers")]
     public class TransfersController : BaseController
     {
+        private readonly FinancialDbContext _context;
+        public TransfersController(FinancialDbContext context)
+        {
+            _context = context;
+        }
         [HttpPost]
         public async Task<IActionResult> AddTransfer(CreateTransferCommand command)
         {
@@ -30,9 +37,10 @@ namespace FinancialManagment.Api.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<TransfersVm>> GetTransfers()
+        public async Task<ActionResult<TransfersDto>> GetTransfers()
         {
-            return await Mediator.Send(new GetTransfersQuery());
+            var transfers = await _context.Transfers.AsNoTracking().Where(p => p.StatusId == 1).ToListAsync();
+            return Ok(transfers);
         }
 
         [HttpPut("{id}")]

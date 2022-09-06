@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace FinancialManagment.Application.Transfers.Queries.GetTransfers
 {
-    public class GetTransfersQuery : IRequest<TransfersVm>
+    public class GetTransfersQuery : IRequest<TransfersDto>
     {
     }
 }
