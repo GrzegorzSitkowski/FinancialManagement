@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 
 namespace FinancialManagment.Application.Products.Queries.GetShoppingList
 {
-    public class GetShoppingListQueryHandler : IRequestHandler<GetShoppingListQuery, ShoppingListVm>
+    public class GetShoppingListQueryHandler : IRequestHandler<GetShoppingListQuery, ShoppingListDto>
     {
         private readonly IFinancialDbContext _context;
         private readonly IMapper _mapper;
@@ -21,11 +21,11 @@ namespace FinancialManagment.Application.Products.Queries.GetShoppingList
             _context = financialDbContext;
             _mapper = mapper;
         }
-        public async Task<ShoppingListVm> Handle(GetShoppingListQuery request, CancellationToken cancellationToken)
+        public async Task<ShoppingListDto> Handle(GetShoppingListQuery request, CancellationToken cancellationToken)
         {
             var shoppingList = await _context.ShoppingLists.AsNoTracking().Where(p => p.StatusId == 1 && p.Done == false).ProjectTo<ShoppingListDto>(_mapper.ConfigurationProvider).ToListAsync();
 
-            return new ShoppingListVm() { Products = shoppingList };
+            return new ShoppingListDto();
         }
     }
 }

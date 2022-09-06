@@ -16,6 +16,11 @@ namespace FinancialManagment.Api.Controllers
     [Route("api/products")]
     public class ProductController : BaseController
     {
+        private readonly FinancialDbContext _context;
+        public ProductController(FinancialDbContext context)
+        {
+            _context = context;
+        }
         [HttpPost]
         public async Task<IActionResult> AddProduct(CreateProductCommand command)
         {
@@ -31,9 +36,10 @@ namespace FinancialManagment.Api.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<ShoppingListVm>> GetShoppingLis()
+        public async Task<ActionResult<ShoppingListDto>> GetShoppingLis()
         {
-            return await Mediator.Send(new GetShoppingListQuery());
+            var shoppingList = await _context.ShoppingLists.AsNoTracking().Where(p => p.StatusId == 1).ToListAsync();
+            return Ok(shoppingList);
         }
 
         [HttpPut("{id}")]

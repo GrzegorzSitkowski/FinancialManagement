@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace FinancialManagment.Application.Products.Queries.GetShoppingList
 {
-    public class GetShoppingListQuery : IRequest<ShoppingListVm>
+    public class GetShoppingListQuery : IRequest<ShoppingListDto>
     {
 
     }
