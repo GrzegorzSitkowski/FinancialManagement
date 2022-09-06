@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 
 namespace FinancialManagment.Application.Accounts.Queries.GetGoals
 {
-    public class GetGoalsQueryHandler : IRequestHandler<GetGoalsQuery, GoalsVm>
+    public class GetGoalsQueryHandler : IRequestHandler<GetGoalsQuery, GoalsDto>
     {
         private readonly IFinancialDbContext _context;
         private readonly IMapper _mapper;
@@ -22,11 +22,11 @@ namespace FinancialManagment.Application.Accounts.Queries.GetGoals
             _context = financialDbContext;
             _mapper = mapper;
         }
-        public async Task<GoalsVm> Handle(GetGoalsQuery request, CancellationToken cancellationToken)
+        public async Task<GoalsDto> Handle(GetGoalsQuery request, CancellationToken cancellationToken)
         {
             var goals = await _context.Goals.AsNoTracking().Where(p => p.StatusId == 1).ProjectTo<GoalsDto>(_mapper.ConfigurationProvider).ToListAsync();
 
-            return new GoalsVm() { Goals = goals };
+            return new GoalsDto();
         }
     }
 }

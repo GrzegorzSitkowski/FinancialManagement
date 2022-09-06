@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace FinancialManagment.Application.Accounts.Queries.GetGoals
 {
-    public class GetGoalsQuery : IRequest<GoalsVm>
+    public class GetGoalsQuery : IRequest<GoalsDto>
     {
 
     }

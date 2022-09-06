@@ -3,7 +3,9 @@ using FinancialManagment.Application.Accounts.Queries.GetGoals;
 using FinancialManagment.Application.Goals.Commands.CreateGoal;
 using FinancialManagment.Application.Goals.Commands.DeleteGoal;
 using FinancialManagment.Application.Goals.Commands.UpdateGoal;
+using FinancialManagment.Persistance;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,6 +16,11 @@ namespace FinancialManagment.Api.Controllers
     [Route("api/goals")]
     public class GoalsController : BaseController
     {
+        private readonly FinancialDbContext _context;
+        public GoalsController(FinancialDbContext context)
+        {
+            _context = context;
+        }
         [HttpPost]
         public async Task<IActionResult> AddGoal(CreateGoalCommand command)
         {
@@ -29,9 +36,10 @@ namespace FinancialManagment.Api.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<GoalsVm>> GetGoals()
+        public async Task<ActionResult<GoalsDto>> GetGoals()
         {
-            return await Mediator.Send(new GetGoalsQuery());
+            var goals = await _context.Goals.AsNoTracking().Where(p => p.StatusId == 1).ToListAsync();
+            return Ok(goals);
         }
 
         [HttpPut("{id}")]
