@@ -15,6 +15,7 @@ namespace FinancialManagment.Application.Accounts.Queries.GetAccountDetail
         public string Name { get; set; }
         public AccountType AccountType { get; set; }
         public decimal Amount { get; set; }
+        public int TypeId { get; set; }
         public ICollection<TransfersAccount> Transfers { get; set; }
 
         public void Mapping(Profile profile)
