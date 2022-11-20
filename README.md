@@ -7,7 +7,7 @@
 * [Sreenshots](#screenshots)
 * [Status](#status)
 
-## Technologies and practics
+## Technologies
 * .NET Core 5.0
 * ASP.NET WEB API
 * CQRS
